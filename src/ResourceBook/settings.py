@@ -1,5 +1,5 @@
 # Django settings for ResourceBook project.
-
+#Ca fonctionne bande de con
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 ADMINS = (
