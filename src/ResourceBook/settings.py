@@ -2,7 +2,6 @@
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
-#GRRRRRRRRRRRRRR
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
