@@ -5,7 +5,7 @@ TEMPLATE_DEBUG = DEBUG
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
-
+# Some comment here.
 MANAGERS = ADMINS
 
 DATABASES = {
