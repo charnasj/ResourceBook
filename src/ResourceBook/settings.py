@@ -1,5 +1,6 @@
 # Django settings for ResourceBook project.
 # jaleh
+#it works
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -17,7 +18,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '/Users/stephane/ResourceBook/src/sqlite.db',                      # Or path to database file if using sqlite3.
+        'NAME': 'D:/Dev/workspace/ResourceBook/src/sqlite.db',                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -107,6 +108,7 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'ResourceBook.urls'
 
+
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
@@ -125,6 +127,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
     'ManageResources'
+
 )
 
 # A sample logging configuration. The only tangible logging
