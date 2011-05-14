@@ -2,6 +2,8 @@
 # jaleh
 #it works
 
+import os
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 ADMINS = (
@@ -18,7 +20,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'C:/users/Mahamat Abakoura/ResourceBook/src/sqlite.db',                      # Or path to database file if using sqlite3.
+        'NAME': '/Users/stephane/ResourceBook/src/sqlite.db',                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -108,11 +110,13 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'ResourceBook.urls'
 
+PROJECT_ROOT = os.path.realpath(os.path.dirname(__file__))
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(PROJECT_ROOT, 'templates')
 )
 
 INSTALLED_APPS = (
@@ -126,8 +130,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
-    'ManageResources',
-
+    'ManageResources'
 )
 
 # A sample logging configuration. The only tangible logging
