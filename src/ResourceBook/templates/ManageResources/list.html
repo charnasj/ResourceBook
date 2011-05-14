@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if LocalGovernment_list %}
+    <ul>
+    {% for LocalGovernment in LocalGovernment_list %}
+        <li><a href="{% url LocalGovernment_detail LocalGovernment.id %}">{{ LocalGovernment.name }}</a>  <small>{{LocalGovernment.address}}</small</li>
+    {% endfor %}
+    </ul>
+    {% else %}
+    You don't have a local Government
+    {% endif %}
+{% endblock %}
