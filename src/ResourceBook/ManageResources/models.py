@@ -74,7 +74,7 @@ class Order (models.Model):
 class OrderItem (models.Model):
     name = models.CharField(max_length=70)
     description = models.CharField(max_length=70) 
-    unit_price = models.DecimalField(decimal_place=2,max_digist=10)
+    unit_price = models.DecimalField(decimal_places=2,max_digits=10)
     order_id = models.ForeignKey(Order)
     resource_id = models.ForeignKey(Resource)
     invoice_line_id = models.ForeignKey(InvoiceLine)
