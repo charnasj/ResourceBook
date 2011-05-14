@@ -5,16 +5,13 @@ from django.db import models
 class LocalGovernment (models.Model):
     name = models.CharField(max_length=70)
     address = models.TextField()
-    phone = models.CharField(max_langth=13)
+    phone = models.CharField(max_length=13)
 
 class User (models.Model):
     first_name = models.CharField(max_length=70)
     last_name = models.CharField(max_length=70)
     address = models.CharField(max_length=70)
-<<<<<<< HEAD
-    email = models.CharField(max_length=70)    
-=======
-    email = models.CharField(max_length=70)
+    email = models.CharField(max_length=70)   
     phone = models.CharField(max_length=13)    
     # TODO : User login/password ?
 
@@ -25,7 +22,7 @@ class VAT (models.Model):
     activityStart = models.DateTimeField()
     activityEnd = models.DateTimeField()
     next = models.IntegerField() # VAT ID link...
->>>>>>> origin/master
+
 
 class Customer (User):
     shipping_address = models.CharField(max_length=70)
@@ -54,7 +51,7 @@ class Invoice (models.Model):
      (u'PP',u'PayPal' ),
      (u'CC',u'Credit Card')
      )
-    paymentKind = models.CharField(maxe_length=2, choices=PAYMENT_TYPES)
+    paymentKind = models.CharField(max_length=2, choices=PAYMENT_TYPES)
     
 class InvoiceLine (models.Model):
     name = models.CharField(max_length=70)
