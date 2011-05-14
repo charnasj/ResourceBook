@@ -17,7 +17,11 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+<<<<<<< HEAD
         'NAME': 'C:/users/simon/ResourceBook/src/sqlite.db',                      # Or path to database file if using sqlite3.
+=======
+        'NAME': '/home/john/ResourceBook/src/sqlite.db',                      # Or path to database file if using sqlite3.
+>>>>>>> origin/master
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -124,7 +128,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
-    'ManageResources',
+    'ManageResources'
 )
 
 # A sample logging configuration. The only tangible logging
