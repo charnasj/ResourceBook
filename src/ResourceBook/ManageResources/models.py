@@ -23,6 +23,7 @@ class VAT (models.Model):
     activityEnd = models.DateTimeField()
     next = models.IntegerField() # VAT ID link...
 
+
 class Customer (User):
     shipping_address = models.CharField(max_length=70)
     
