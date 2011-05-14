@@ -1,6 +1,6 @@
 # Django settings for ResourceBook project.
 # jaleh
-#Enfin, ça marche
+#it works
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
