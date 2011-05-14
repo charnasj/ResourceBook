@@ -1,4 +1,5 @@
 # Django settings for ResourceBook project.
+# jaleh
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
