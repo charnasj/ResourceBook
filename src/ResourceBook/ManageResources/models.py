@@ -5,7 +5,7 @@ from django.db import models
 class LocalGovernment (models.Model):
     name = models.CharField(max_length=70)
     address = models.TextField()
-    phone = models.CharField(max_langth=13)
+    phone = models.CharField(max_length=13)
 
 class User (models.Model):
     first_name = models.CharField(max_length=70)
@@ -16,7 +16,7 @@ class User (models.Model):
     # TODO : User login/password ?
 
 class VAT (models.Model):
-    ratio = models.DecimalField()
+    ratio = models.DecimalField(decimal_places=2,max_digits=10)
     name = models.CharField(max_length=70)
     description = models.CharField(max_length=70)
     activityStart = models.DateTimeField()
@@ -50,7 +50,7 @@ class Invoice (models.Model):
      (u'PP',u'PayPal' ),
      (u'CC',u'Credit Card')
      )
-    paymentKind = models.CharField(maxe_length=2, choices=PAYMENT_TYPES)
+    paymentKind = models.CharField(max_length=2, choices=PAYMENT_TYPES)
     
 class InvoiceLine (models.Model):
     name = models.CharField(max_length=70)
@@ -74,7 +74,7 @@ class Order (models.Model):
 class OrderItem (models.Model):
     name = models.CharField(max_length=70)
     description = models.CharField(max_length=70) 
-    unit_price = models.DecimalField()
+    unit_price = models.DecimalField(decimal_places=2,max_digits=10)
     order_id = models.ForeignKey(Order)
     resource_id = models.ForeignKey(Resource)
     invoice_line_id = models.ForeignKey(InvoiceLine)
