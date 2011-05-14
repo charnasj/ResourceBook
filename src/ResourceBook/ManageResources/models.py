@@ -11,12 +11,12 @@ class User (models.Model):
     first_name = models.CharField(max_length=70)
     last_name = models.CharField(max_length=70)
     address = models.CharField(max_length=70)
-    email = models.CharField(max_length=70)   
+    email = models.CharField(max_length=70)
     phone = models.CharField(max_length=13)    
     # TODO : User login/password ?
 
 class VAT (models.Model):
-    ratio = models.DecimalField()
+    ratio = models.DecimalField(decimal_places=2,max_digits=10)
     name = models.CharField(max_length=70)
     description = models.CharField(max_length=70)
     activityStart = models.DateTimeField()
@@ -75,7 +75,7 @@ class Order (models.Model):
 class OrderItem (models.Model):
     name = models.CharField(max_length=70)
     description = models.CharField(max_length=70) 
-    unit_price = models.DecimalField()
+    unit_price = models.DecimalField(decimal_places=2,max_digits=10)
     order_id = models.ForeignKey(Order)
     resource_id = models.ForeignKey(Resource)
     invoice_line_id = models.ForeignKey(InvoiceLine)
