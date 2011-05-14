@@ -11,9 +11,6 @@ class User (models.Model):
     first_name = models.CharField(max_length=70)
     last_name = models.CharField(max_length=70)
     address = models.CharField(max_length=70)
-<<<<<<< HEAD
-    email = models.CharField(max_length=70)    
-=======
     email = models.CharField(max_length=70)
     phone = models.CharField(max_length=13)    
     # TODO : User login/password ?
@@ -25,7 +22,6 @@ class VAT (models.Model):
     activityStart = models.DateTimeField()
     activityEnd = models.DateTimeField()
     next = models.IntegerField() # VAT ID link...
->>>>>>> origin/master
 
 class Customer (User):
     shipping_address = models.CharField(max_length=70)
