@@ -18,5 +18,6 @@ urlpatterns = patterns('',
     # url(r'^accounts/', include('registration.backends.default.urls')),
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^ManageResources/$','ManageResources.views.index'),
     url(r'^ManageResources/', include('ManageResources.urls')),
 )
