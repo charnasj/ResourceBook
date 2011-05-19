@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Create a new user</h1>
+
+  <form action="save_user/" method="get">
+  {% csrf_token %}
+  	<label for="firstName">First Name:</label>
+	<input type="text" name="firstName" value="Br" id="firstName">
+    <br>
+    <label for="lastName">Last Name:</label>
+    <input type="text" name="lastName" value="Ar" id="lastName">
+      <input type="submit" value="Create user">
+  </form>
+{% endblock %}
