@@ -24,7 +24,8 @@ DATABASES = {
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        'PORT': '',  
+                            # Set to empty string for default. Not used with sqlite3.
     }
 }
 
@@ -129,8 +130,15 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
+<<<<<<< HEAD
+    'django.contrib.admindocs',
+    'ManageResources',
+           ' woodPro.blog',
+
+=======
     'django.contrib.admindocs',
     'ManageResources'
+>>>>>>> origin/master
 )
 
 # A sample logging configuration. The only tangible logging
