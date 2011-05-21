@@ -21,4 +21,5 @@ urlpatterns = patterns('',
     url(r'^ManageResources/$','ManageResources.views.index'),
     url(r'^ManageResources/', include('ManageResources.urls')),
     url(r'^PlaceOrder/', include('PlaceOrder.urls')),
+    url(r'^AvailabilityGoods/', include('AvailabilityGoods.urls'))
 )
