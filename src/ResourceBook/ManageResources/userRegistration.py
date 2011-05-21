@@ -14,9 +14,25 @@ def Reg_newuser_save(request):
         firstName= request.GET['firstName']
     if 'lastName' in request.GET and request.GET['lastName']:
         lastName= request.GET['lastName']
+    if 'username' in request.GET and request.GET['username']:
+        username= request.GET['username']
     if 'password' in request.GET and request.GET['password']:
         password= request.GET['password']
-        new_user = User(first_name=firstName, last_name=lastName)
+    if 'address' in request.GET and request.GET['address']:
+        address= request.GET['address']
+    if 'email' in request.GET and request.GET['email']:
+        email= request.GET['email']    
+    if 'phone' in request.GET and request.GET['phone']:
+        phone= request.GET['phone'] 
+    
+    new_user = User(first_name=firstName, 
+                    last_name=lastName, 
+                    username=username,
+                    password=password,
+                    address=address,
+                    email=email,
+                    phone=phone 
+                    )
     #new_user = User(first_name="Mahammat" , last_name="Petrov")
 
     new_user.save()

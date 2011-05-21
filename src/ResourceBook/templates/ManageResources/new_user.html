@@ -6,10 +6,26 @@
   <form action="save_user/" method="get">
   {% csrf_token %}
   	<label for="firstName">First Name:</label>
-	<input type="text" name="firstName" value="Br" id="firstName">
+	<input type="text" name="firstName" value="" id="firstName">
     <br>
     <label for="lastName">Last Name:</label>
-    <input type="text" name="lastName" value="Ar" id="lastName">
+    <input type="text" name="lastName" value="" id="lastName">
+    <br>
+    <label for="username">Username:</label>
+    <input type="text" name="username" value="" id="username">
+    <br>
+    <label for="password">Password:</label>
+    <input type="text" name="password" value="" id="password">
+    <br>
+    <label for="address">Address:</label>
+    <input type="textarea" name="address" value="" id="address">
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" name="email" value="" id="email">
+    <br>
+    <label for="username">Phone:</label>
+    <input type="text" name="phone" value="" id="phone">
+    <br>
       <input type="submit" value="Create user">
   </form>
 {% endblock %}
