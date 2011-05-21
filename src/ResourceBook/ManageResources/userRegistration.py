@@ -1,15 +1,12 @@
-from django.views.generic.list_detail import object_list
-from django.views.generic.list_detail import object_detail
-from django.views.generic.create_update import create_object
-from django.views.generic.create_update import update_object
-from django.views.generic.create_update import delete_object
-from django.core.urlresolvers import reverse
- 
 from models import *
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render_to_response
 
+
+
 def Reg_newuser_save(request):
+    #registration_mail_content = "Weclome to the ResourceBook Django platform!\nThis is an email to confirm that you have registered as a new user.\n if this wasn't you, please contact the administrator ASAP."
+    #from_email = "egov-django@unine.ch"
     if 'firstName' in request.GET and request.GET['firstName']:
         firstName= request.GET['firstName']
     if 'lastName' in request.GET and request.GET['lastName']:
@@ -25,11 +22,11 @@ def Reg_newuser_save(request):
     if 'phone' in request.GET and request.GET['phone']:
         phone= request.GET['phone'] 
     
-    new_user = User(first_name=firstName, last_name=lastName)
-    #new_user = User(first_name="Mahammat" , last_name="Petrov")
-
+    new_user = User(first_name=firstName,last_name=lastName,username=username,
+                                password=password,address=address,email=email,phone=phone)
+    #new_user.user.email_user("Welcome to ResourceBook!", registration_mail_content, from_email)
     new_user.save()
-    #return render_to_response('see_my_post.html', {'my_comment' : my_comment})
+    
     return HttpResponse("A new User has been saved!")
 
 def Reg_newuser_form(request):
