@@ -10,4 +10,7 @@
     {% else %}
     You don't have a local Government
     {% endif %}
+    <p><label for="id_subject">Subject:</label>
+    <input id="id_message" type="text" name="subject" maxlength="100" /></p>
+    <input type="submit" value="Go" name=href="{% url LocalGovernment_detail LocalGovernment.id %}">{{ LocalGovernment.name }  />
 {% endblock %}
