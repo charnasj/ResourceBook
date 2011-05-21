@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Add Resources goods</h1>
+
+  <form action="add_resources_goods/" method="get">
+  {% csrf_token %}
+  	<label for="name">Name Resources:</label>
+	<input type="text" name="name" value="" id="name">
+    <br>
+    <label for="description">Description:</label>
+    <input type="text" name="description" value="" id="description">
+    <br>
+    <label for="unit_price">Unit price:</label>
+    <input type="text" name="unit_price" value="100" id="unit_price">  
+    <br>
+    <label for="local_government_id">Local Government:</label>
+    <input type="text" name="local_government_id" value="1" id="local_government_id">  
+    <br>
+    <label for="vat_id">VAT:</label>
+    <input type="text" name="vat_id" value="1" id="vat_id">
+    <br>
+      <input type="submit" value="Add Resources">
+  </form>
+{% endblock %}
