@@ -25,7 +25,14 @@ def Reg_newuser_save(request):
     if 'phone' in request.GET and request.GET['phone']:
         phone= request.GET['phone'] 
     
-    new_user = User(first_name=firstName, last_name=lastName)
+    new_user = User(first_name=firstName, 
+                    last_name=lastName, 
+                    username=username,
+                    password=password,
+                    address=address,
+                    email=email,
+                    phone=phone 
+                    )
     #new_user = User(first_name="Mahammat" , last_name="Petrov")
 
     new_user.save()
