@@ -33,11 +33,12 @@ def LocalGovernment_detail(request, id, message):
 def Order_list(request):
     
     return object_list(request, queryset=Resource.objects.all(), template_name='ManageResources/orderDetail.html', template_object_name='LocalGovernment'
-)
+                       )
 
 def index(request):
     return HttpResponse("This is an eGovernment platform for resource management.")
 
+
 
 def Add_resource_gymall_save(request):
     if 'name' in request.GET and request.GET['name']:
