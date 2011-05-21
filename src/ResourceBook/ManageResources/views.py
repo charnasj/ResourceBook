@@ -68,3 +68,7 @@ def Add_resource_gymall_save(request):
 def Add_resource_gymall_form(request):
     return render_to_response('ManageResources/add_resource_gymhall.html')
 
+def Active_order_gym(request):
+    
+    return object_list(request, queryset=OrderItem.objects.all(), template_name='ManageResources/activeordergym.html', template_object_name='OrderItem'
+)
