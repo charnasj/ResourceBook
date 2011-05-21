@@ -1,6 +1,6 @@
 from django.db import models
 
-# Create your models here.
+
 
 class LocalGovernment (models.Model):
     name = models.CharField(max_length=70)
@@ -10,10 +10,10 @@ class LocalGovernment (models.Model):
 class User (models.Model):
     first_name = models.CharField(max_length=70)
     last_name = models.CharField(max_length=70)
+    email = models.EmailField()
     username = models.CharField(max_length=70)
     password = models.CharField(max_length=70)
     address = models.CharField(max_length=70)
-    email = models.EmailField()
     phone = models.CharField(max_length=13)    
 
 class VAT (models.Model):
