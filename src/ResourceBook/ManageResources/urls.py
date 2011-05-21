@@ -10,5 +10,6 @@ urlpatterns = patterns('',
     url(r'^add_resources_goods/add_resources_goods/$', views.Add_resources_goods_save, name ='Add_resources_goods_save'),
     url(r'^add_resources_goods/$', views.Add_resources_goods_form, name ='Add_resources_goods_form'),
     url(r'^detail/(?P<id>\d+)/$', views.LocalGovernment_detail, name='LocalGovernment_detail'),
-
+	url(r'^add_gymhall/save_resource_gymhall/$', views.Add_resource_gymall_save, name='Add_resource_gymall_save'),
+	url(r'^add_gymhall/$', views.Add_resource_gymall_form, name='Add_resource_gymall_form'),
 )

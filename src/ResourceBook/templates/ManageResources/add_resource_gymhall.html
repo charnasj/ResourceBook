@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Add a new Gym Hall</h1>
+
+  <form action="save_resource_gymhall/" method="get">
+  {% csrf_token %}
+  	<label for="name">Name:</label>
+	<input type="text" name="name" value=" " id="name">
+    <br>
+    <label for="description">Description:</label>
+    <br>
+    <textarea NAME="description" COLS=30 ROWS=5 id="description"></textarea>
+    <br><br>
+    <label for="unit_price">price:</label>
+	<input type="text" name="unit_price" value=" " id="unit_price">
+	<br><br>
+	<label for="address">Address:</label>
+	<input type="text" name="address" value=" " id="address">
+	<br><br>
+	<label for="startdate">Start date:</label>
+	<input type="text" name="startdate" value=" " id="startdate">
+	<label for="startdate">(YYYY-MM-DD HH:MM:SS)</label>
+	<br><br>
+	<label for="finishdate">Finish date:</label>
+	<input type="text" name="finishdate" value=" " id="finishdate">
+	<label for="startdate">(YYYY-MM-DD HH:MM:SS)</label>
+    <br><br>
+    <input type="submit" value="Add">
+  </form>
+{% endblock %}

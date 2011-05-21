@@ -60,6 +60,7 @@ def Reg_newuser_form(request):
     #return render_to_response('see_my_post.html', {'my_comment' : my_comment})
     return render_to_response('ManageResources/new_user.html')
 
+<<<<<<< HEAD
 def Add_resources_goods_form(request):
     return render_to_response('ManageResources/add_resources_goods.html')
 
@@ -81,3 +82,32 @@ def Add_resources_goods_save(request):
     add_resources.save()
     return HttpResponse("A new Resources goods has been added!")
 
+=======
+def Add_resource_gymall_save(request):
+    if 'name' in request.GET and request.GET['name']:
+        name= request.GET['name']
+    if 'description' in request.GET and request.GET['description']:
+        description= request.GET['description']
+    if 'unit_price' in request.GET and request.GET['unit_price']:
+        unit_price= request.GET['unit_price']
+    if 'address' in request.GET and request.GET['address']:
+        address= request.GET['address']
+    if 'startdate' in request.GET and request.GET['startdate']:
+        startdate= request.GET['startdate']
+    if 'finishdate' in request.GET and request.GET['finishdate']:
+        finishdate= request.GET['finishdate']
+   # add_gymHall = Resource(name=name, description=description,local_government_id = 1,vat_id = 1)
+   # add_gymHall_address = RentResource(address=address)
+   # add_gymHall_dates = RentReservation(start=startdate, finish=finishdate,rent_resource_id=1,customer_id=1,order_item_id=1)
+        
+
+    #add_gymHall.save()
+    #add_gymHall_address.save()
+    #add_gymHall_dates.save()
+    
+    return HttpResponse("Gym Hall added")
+
+    
+def Add_resource_gymall_form(request):
+    return render_to_response('ManageResources/add_resource_gymhall.html')
+>>>>>>> origin/master
