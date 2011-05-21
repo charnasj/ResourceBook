@@ -19,16 +19,18 @@ def LocalGovernment_list(request):
         template_object_name='LocalGovernment'
     )
     
-def LocalGovernment_detail(request, id):
+def LocalGovernment_detail(request, id, message):
     
     return object_detail(request,
         queryset=LocalGovernment.objects.all(),
         object_id=id,
+        object_message=message,
         template_name='ManageResources/detail.html',
         template_object_name='LocalGovernment'
     )
+
     
-def Order_list(request):
+	def Order_list(request):
     
     return object_list(request, queryset=Resource.objects.all(), template_name='ManageResources/orderDetail.html', template_object_name='LocalGovernment'
 )
@@ -57,5 +59,3 @@ def Reg_newuser_form(request):
 
     #return render_to_response('see_my_post.html', {'my_comment' : my_comment})
     return render_to_response('ManageResources/new_user.html')
-    
-    
