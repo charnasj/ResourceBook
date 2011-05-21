@@ -5,7 +5,7 @@ from django.contrib import admin
 class LocalGovernmentAdmin(admin.ModelAdmin):
     list_display = ['name', 'address', 'phone']
 admin.site.register(LocalGovernment, LocalGovernmentAdmin)
-
+ 
 class UserAdmin(admin.ModelAdmin):
     list_display = ['first_name' , 'last_name' , 'address']
 admin.site.register(User, UserAdmin)
