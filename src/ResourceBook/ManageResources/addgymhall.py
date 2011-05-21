@@ -44,6 +44,7 @@ def Add_resource_gymall_save(request):
         client_id= request.GET['client_id']
     if 'Localgorvernment_ID' in request.GET and request.GET['Localgorvernment_ID']:
         Localgorvernment_ID= request.GET['Localgorvernment_ID']
+        Localgorvernment_ID= localgovernment.object.get(pk=Localgorvernment_ID)
     if 'name' in request.GET and request.GET['name']:
         name= request.GET['name']
     if 'description' in request.GET and request.GET['description']:
