@@ -7,6 +7,14 @@ from django.core.urlresolvers import reverse
  
 from models import *
 
+def Resource_list(request):
+    """Show all notes"""
+ 
+    return object_list(request, 
+        queryset=Resource.objects.all(),
+        template_name='resources/list.html',
+        template_object_name='ResourceList'
+    )
 
 def LocalGovernment_list(request):
     """Show all notes"""
