@@ -10,45 +10,17 @@ from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render_to_response
 import userRegistration
 
-def LocalGovernment_list(request):
-    """Show all notes"""
- 
-    return object_list(request, 
-        queryset=LocalGovernment.objects.all(),
-        template_name='ManageResources/list.html',
-        template_object_name='LocalGovernment'
-    )
-    
-def LocalGovernment_detail(request, id, message):
-    
-    return object_detail(request,
-        queryset=LocalGovernment.objects.all(),
-        object_id=id,
-        object_message=message,
-        template_name='ManageResources/detail.html',
-        template_object_name='LocalGovernment'
-    )
-
-    
-def Order_list(request):
-    
-    return object_list(request, queryset=Resource.objects.all(), template_name='ManageResources/orderDetail.html', template_object_name='LocalGovernment'
-)
-
-def index(request):
-    return HttpResponse("This is an eGovernment platform for resource management.")
-
 
 def Add_resource_gymall_save(request):
-	if 'client_id' in request.GET and request.GET['client_id']:
-        client_id= request.GET['client_id']
+    if 'client_id' in request.GET and request.GET['client_id']:
+    	client_id= request.GET['client_id']
     if 'Localgorvernment_ID' in request.GET and request.GET['Localgorvernment_ID']:
-        Localgorvernment_ID= request.GET['Localgorvernment_ID']
-        Localgorvernment_ID= localgovernment.object.get(pk=Localgorvernment_ID)
+    	Localgorvernment_ID= request.GET['Localgorvernment_ID']
+    	Localgorvernment_ID= LocalGovernment.objects.get(pk=Localgorvernment_ID)
     if 'name' in request.GET and request.GET['name']:
-        name= request.GET['name']
+    	name= request.GET['name']
     if 'description' in request.GET and request.GET['description']:
-        description= request.GET['description']
+    	description= request.GET['description']
     if 'unit_price' in request.GET and request.GET['unit_price']:
         unit_price= request.GET['unit_price']
     if 'address' in request.GET and request.GET['address']:
