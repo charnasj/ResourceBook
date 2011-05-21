@@ -10,10 +10,11 @@ class LocalGovernment (models.Model):
 class User (models.Model):
     first_name = models.CharField(max_length=70)
     last_name = models.CharField(max_length=70)
+    username = models.CharField(max_length=70)
+    password = models.CharField(max_length=70)
     address = models.CharField(max_length=70)
-    email = models.CharField(max_length=70)
+    email = models.EmailField()
     phone = models.CharField(max_length=13)    
-    # TODO : User login/password ?
 
 class VAT (models.Model):
     ratio = models.DecimalField(decimal_places=2,max_digits=10)
