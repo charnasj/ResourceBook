@@ -5,6 +5,12 @@
 
   <form action="save_resource_gymhall/" method="get">
   {% csrf_token %}
+  	<label for="client_id">Client ID:</label>
+	<input type="text" name="client_id" value=" " id="client_id">
+    <br>
+    <label for="Localgorvernment_ID">Local government ID:</label>
+	<input type="text" name="Localgorvernment_ID" value=" " id="Localgorvernment_ID">
+    <br>
   	<label for="name">Name:</label>
 	<input type="text" name="name" value=" " id="name">
     <br>
