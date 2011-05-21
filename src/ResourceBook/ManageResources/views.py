@@ -19,12 +19,11 @@ def LocalGovernment_list(request):
         template_object_name='LocalGovernment'
     )
     
-def LocalGovernment_detail(request, id, message):
+def LocalGovernment_detail(request, id):
     
     return object_detail(request,
         queryset=LocalGovernment.objects.all(),
         object_id=id,
-        object_message=message,
         template_name='ManageResources/detail.html',
         template_object_name='LocalGovernment'
     )
