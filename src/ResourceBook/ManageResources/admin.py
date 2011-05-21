@@ -42,7 +42,7 @@ class OrderItemAdmin(admin.ModelAdmin):
 admin.site.register(OrderItem, OrderItemAdmin)
 
 class GoodsResourceAdmin(admin.ModelAdmin):
-    list_display = ['remaining_quantity', 'unit_type']
+    list_display = ['name','description','remaining_quantity', 'unit_type']
 admin.site.register(GoodsResource, GoodsResourceAdmin)
 
 class RentResourceAdmin(admin.ModelAdmin):
