@@ -1,6 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
+	<<table>
+  <tr>
+    <th>Order ID</th>
+    <th>Resource ID</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Unit Price</th>
+  </tr>
+  
+  <tr>
+    <td>{{OrderItem.order_id}}</td>
+    <td>{{OrderItem.resource_id}}</td>
+    <td>{{OrderItem.name}}</td>
+    <td>{{OrderItem.description}}</td>
+    <td>{{OrderItem.unit_price}}</td>
+  </tr>
+</table>
+ 
     <h2>{{ LocalGovernment.name }}</h2>
     <p>{{ LocalGovernment.address }}</p>
     <p>{{ LocalGovernment.phone }}</p>
