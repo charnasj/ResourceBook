@@ -1,4 +1,3 @@
-/__init__.pyc
-/urls.pyc
-/settings.pyc
-/settings.py
+/README
+*.pyc
+*.db
