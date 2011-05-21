@@ -63,4 +63,4 @@ from ResourceBook.ManageResources.models import LocalGovernment
 #    return HttpResponse("Gym Hall added")
 
 def View_available_goods(request):
-    return render_to_response('AvailabilityGoods/view_available_goods.html')    
+    return render_to_response('ViewAvailableGoods/view_available_goods.html')    
