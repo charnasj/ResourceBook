@@ -130,15 +130,11 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
-<<<<<<< HEAD
     'django.contrib.admindocs',
     'ManageResources',
            ' woodPro.blog',
-
-=======
     'django.contrib.admindocs',
     'ManageResources'
->>>>>>> origin/master
 )
 
 # A sample logging configuration. The only tangible logging
