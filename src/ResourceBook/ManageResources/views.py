@@ -60,7 +60,7 @@ def Reg_newuser_form(request):
     #return render_to_response('see_my_post.html', {'my_comment' : my_comment})
     return render_to_response('ManageResources/new_user.html')
 
-<<<<<<< HEAD
+
 def Add_resources_goods_form(request):
     return render_to_response('ManageResources/add_resources_goods.html')
 
@@ -82,7 +82,7 @@ def Add_resources_goods_save(request):
     add_resources.save()
     return HttpResponse("A new Resources goods has been added!")
 
-=======
+
 def Add_resource_gymall_save(request):
     if 'name' in request.GET and request.GET['name']:
         name= request.GET['name']
@@ -110,4 +110,4 @@ def Add_resource_gymall_save(request):
     
 def Add_resource_gymall_form(request):
     return render_to_response('ManageResources/add_resource_gymhall.html')
->>>>>>> origin/master
+

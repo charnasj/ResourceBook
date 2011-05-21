@@ -1,7 +1,6 @@
 from models import *
 from django.contrib import admin
 
-
 class LocalGovernmentAdmin(admin.ModelAdmin):
     list_display = ['name', 'address', 'phone']
 admin.site.register(LocalGovernment, LocalGovernmentAdmin)
