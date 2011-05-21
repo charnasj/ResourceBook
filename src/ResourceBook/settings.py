@@ -12,7 +12,8 @@ ADMINS = (
     ('Simon Brunner','simon.brunner@unine.ch'),
     ('Stephane Costa', 'stephane.costa@unine.ch'),
     ('Abakoura Mahamat','abakoura.mahamat@unine.ch'),
-    ('Mazaji Jaleh','mazaji.jaleh@unine.ch')
+    ('Mazaji Jaleh','mazaji.jaleh@unine.ch'),
+    ('Askri safwen','safwen.askri@unine.ch')
 )
 
 MANAGERS = ADMINS
@@ -20,7 +21,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '/home/john/ResourceBook/src/sqlite3.db',                      # Or path to database file if using sqlite
+        'NAME': 'C:/Users/unine/Desktop/eclipse/workshopjango/ResourceBook/src/sqlite3.db',                      # Or path to database file if using sqlite
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
