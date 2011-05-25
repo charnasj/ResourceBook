@@ -14,9 +14,10 @@ import userRegistration
 def Add_resource_gymall_save(request):
     if 'client_id' in request.GET and request.GET['client_id']:
     	client_id= request.GET['client_id']
+    	client_id= User.objects.get(pk=client_id)
     if 'Localgorvernment_ID' in request.GET and request.GET['Localgorvernment_ID']:
     	Localgorvernment_ID= request.GET['Localgorvernment_ID']
-    	Localgorvernment_ID= LocalGovernment.objects.get(pk=Localgorvernment_ID)
+    	Localgorvernment_ID= LocalGovernment.objects.get(name=Localgorvernment_ID)
     if 'name' in request.GET and request.GET['name']:
     	name= request.GET['name']
     if 'description' in request.GET and request.GET['description']:
@@ -29,12 +30,12 @@ def Add_resource_gymall_save(request):
         startdate= request.GET['startdate']
     if 'finishdate' in request.GET and request.GET['finishdate']:
         finishdate= request.GET['finishdate']
-   # add_gymHall = Resource(name=name, description=description,local_government_id = 1,vat_id = 1)
-   # add_gymHall_address = RentResource(address=address)
-   # add_gymHall_dates = RentReservation(start=startdate, finish=finishdate,rent_resource_id=1,customer_id=1,order_item_id=1)
+    vat = VAT.objects.get(name='basic')
+    add_gymHall = RentResource(name=name, description=description,unit_price= unit_price, local_government_id = Localgorvernment_ID,vat_id = vat, address=address)
+    #add_gymHall_dates = RentReservation(start=startdate, finish=finishdate,rent_resource_id=1,customer_id=1,order_item_id=1)
         
 
-    #add_gymHall.save()
+    add_gymHall.save()
     #add_gymHall_address.save()
     #add_gymHall_dates.save()
     
