@@ -16,7 +16,6 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
-{
 
 DATABASES = {
     'default': {

@@ -6,7 +6,7 @@
     {% if View_available_goods %}
     <ul>
     {% for GoodsResource in View_available_goods %}
-        <li> <small>{{GoodsResource.id}}</small</li>
+        <li> <a href="{% url View_available_goods_detail GoodsResource.id%}">{{ TEST }}</a></li>
     {% endfor %}
     </ul>
     {% else %}

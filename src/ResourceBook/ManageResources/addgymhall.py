@@ -8,7 +8,7 @@ from django.core.urlresolvers import reverse
 from models import *
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render_to_response
-import userRegistration
+#import userRegistration
 
 
 def Add_resource_gymall_save(request):
