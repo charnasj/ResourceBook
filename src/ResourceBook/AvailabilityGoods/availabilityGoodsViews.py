@@ -30,6 +30,9 @@ from ResourceBook.ManageResources.models import GoodsResource
 #
 
 def View_available_goods(request):
+
+    for goods in GoodsResource.objects.all():
+        print(goods.name)
     return object_list(request, 
         queryset=GoodsResource.objects.all(),
         template_name='ViewAvailableGoods/view_available_goods.html',
