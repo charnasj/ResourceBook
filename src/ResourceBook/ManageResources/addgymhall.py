@@ -11,7 +11,7 @@ from django.shortcuts import render_to_response
 #import userRegistration
 
 
-def Add_resource_gymall_save(request):
+def Add_resource_gymhall_save(request):
     if 'client_id' in request.GET and request.GET['client_id']:
     	client_id= request.GET['client_id']
     	client_id= ResourceBookUser.objects.get(pk=client_id)
