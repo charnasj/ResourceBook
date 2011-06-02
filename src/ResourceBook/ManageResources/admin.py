@@ -6,8 +6,8 @@ class LocalGovernmentAdmin(admin.ModelAdmin):
 admin.site.register(LocalGovernment, LocalGovernmentAdmin)
  
 class UserAdmin(admin.ModelAdmin):
-    list_display = ['first_name' , 'last_name' , 'address']
-admin.site.register(User, UserAdmin)
+    list_display = ['user' , 'address']
+admin.site.register(ResourceBookUser, UserAdmin)
 
 class VATAdmin(admin.ModelAdmin):
     list_display = ['name' , 'ratio' , 'description']
@@ -42,7 +42,7 @@ class OrderItemAdmin(admin.ModelAdmin):
 admin.site.register(OrderItem, OrderItemAdmin)
 
 class GoodsResourceAdmin(admin.ModelAdmin):
-    list_display = ['remaining_quantity', 'unit_type']
+    list_display = ['name','description','remaining_quantity', 'unit_type']
 admin.site.register(GoodsResource, GoodsResourceAdmin)
 
 class RentResourceAdmin(admin.ModelAdmin):
