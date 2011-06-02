@@ -6,8 +6,8 @@ class LocalGovernmentAdmin(admin.ModelAdmin):
 admin.site.register(LocalGovernment, LocalGovernmentAdmin)
  
 class UserAdmin(admin.ModelAdmin):
-    list_display = ['first_name' , 'last_name' , 'address']
-admin.site.register(User, UserAdmin)
+    list_display = ['user' , 'address']
+admin.site.register(ResourceBookUser, UserAdmin)
 
 class VATAdmin(admin.ModelAdmin):
     list_display = ['name' , 'ratio' , 'description']
