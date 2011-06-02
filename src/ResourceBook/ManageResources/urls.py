@@ -47,8 +47,8 @@ url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': set
 
 
     url(r'^detail/(?P<id>\d+)/$', views.LocalGovernment_detail, name='LocalGovernment_detail'),
-	url(r'^place_gym_order_manager/save_resource_gymhall/$', addgymhall.Add_resource_gymall_save, name='Add_resource_gymall_save'),
-	url(r'^place_gym_order_manager/$', addgymhall.Add_resource_gymall_form, name='Add_resource_gymall_form'),
+	url(r'^place_gym_order_manager/save_resource_gymhall/$', addgymhall.Add_resource_gymhall_save, name='Add_resource_gymhall_save'),
+	url(r'^place_gym_order_manager/$', addgymhall.Add_resource_gymhall_form, name='Add_resource_gymhall_form'),
     url(r'^detail/(?P<id>\d+)/$', views.LocalGovernment_detail, name='LocalGovernment_detail'),
 	url(r'^view_available_gymhall/$', availabilityGymHallViews.View_available_gymhall, name='View_available_gymhall'),
 	url(r'^add_resources_gymhall/save_resource_gymhall/$', addgymhall.Add_resource_gymhall_save, name='Add_resource_gymhall_save'),
