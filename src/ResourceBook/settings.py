@@ -19,7 +19,7 @@ DATABASES = {
     'default': {
 
 
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle        
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle                   # Or path to database file if using sqli
         'NAME': 'sqlite3.db',                      # Or path to database file if using sql
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
