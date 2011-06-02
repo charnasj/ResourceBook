@@ -22,12 +22,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.S
-<<<<<<< HEAD
-        'NAME': 'sqlite3.db',                      # Or path to database file if using sqlite
-=======
-        'NAME': 'Q:/BeNeFri/E-Government Frameworks/Django-Project/ResourceBook/src/sqlite3.db',                      # Or path to database file if using sqlite
-        'NAME': 'Q:/BeNeFri/E-Government Frameworks/Django-Project/ResourceBook/src/sqlite3.db',                      # Or path to database file if using sqlite
->>>>>>> origin/master
+        'NAME': 'sqlite3.db',                      # Or path to database file if using sqli
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
