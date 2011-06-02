@@ -1,13 +1,73 @@
-<html>
-    <head>
-        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-        <title>ResourceBook</title>        
-    </head>
-    <body>
-        <div id="content">
-       {% block content %}
-       
-       {% endblock %} 
-       </div>
-    </body>
-</html>    
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>    <title>Ressource Book</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	  <meta name="title" content="Resource Book" />    
+	  <meta name="description" content="resource book, gym hall, wood" />    
+	  <meta name="keywords" content="resource book, gym hall, wood" />    
+	  <meta name="language" content="en" />    
+	  <meta name="subject" content="Resource Book" />    
+	  <meta name="robots" content="All" />    
+	  <meta name="copyright" content="Resource Book - UniNE" />    
+	  <meta name="abstract" content="Site description here" />    
+	  <meta name="MSSmartTagsPreventParsing" content="true" />    
+	  <link id="theme" rel="stylesheet" type="text/css" href="http://localhost:8000/ManageResources/static/style.css" title="theme" />
+	  <link id="theme" rel="stylesheet" type="text/css" href="http://localhost:8000/ManageResources/static/ui-lightness/jquery-ui-1.8.13.custom.css" title="theme" />  
+	</head>  
+	
+	<body>     
+		<div id="wrapper">       
+			<div id="bg">         
+				<div id="header"></div>          
+					<div id="page">           
+						<div id="container">
+						             
+						<!-- banner -->
+						              
+						<div id="banner"></div>
+						              
+						<!-- end banner -->
+						              
+						<!-- horizontal navigation -->
+						              
+						<div id="nav1">               
+							<ul>                
+								<li id="current" style="border:none"> <a href="#" shape="rect">Home</a>  </li>                
+								<li>                  <a href="#" shape="rect">Link</a>                </li>                
+								<li>                  <a href="#" shape="rect">Link</a>                </li>               
+								<li>                  <a href="http://localhost:8000/ManageResources/new_user/" shape="rect">Inscription</a>                </li> 
+								<!--<li>                  <a href="#" shape="rect">Link</a>                </li>-->               
+								<li>                  <a href="#" shape="rect">Contact us</a>          </li>              
+							</ul>             
+						</div>
+						              
+						<!-- end horizontal navigation -->
+						              
+						<!--  content -->              
+						
+						<div id="content">
+							<div id="center">                 
+								{% block content %} 
+								
+								{% endblock %}    
+								
+								<!--  <div class="clear" style="height:40px"></div>-->             
+							</div>              
+							
+							<!-- end content -->
+							           
+						</div>            
+						
+						<!-- end container -->
+						         
+					</div>          
+					
+					<div id="footerWrapper">           
+						<div id="footer">             
+							<p style="padding-top:10px">               <!--THIS TEMPLATE IS FREE IF YOU DO NOT REMOVE OR MODIFY THE FOLLOWING LINK. TO REMOVE THIS LINK, PLEASE MAKE A $10 DONATION AT www.dotemplate.com.-->                <a href="#" shape="rect">Resource Book © 2011</a> </p>           
+						</div>         
+					</div>       
+				</div>     
+			</div>   
+		</body>
+	</html>
