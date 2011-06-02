@@ -12,5 +12,5 @@ from models import *
 def placeGoodsOrder(request):
     return HttpResponse("A new Order has been saved!")
 
-def getGoodsOrderForm(request):
-    return render_to_response('ManageResources/place_goods_order_form.html')
+def Place_order_goods_save(request):
+    return render_to_response('ManageResources/place_order_goods.html')

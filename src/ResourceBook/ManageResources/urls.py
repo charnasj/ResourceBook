@@ -58,5 +58,6 @@ urlpatterns = patterns('',
     url(r'^detail/(?P<id>\d+)/$', views.LocalGovernment_detail, name='LocalGovernment_detail'),
 	url(r'^view_available_gymhall/$', availabilityGymHallViews.View_available_gymhall, name='View_available_gymhall'),
 	url(r'^add_resources_gymhall/save_resource_gymhall/$', addgymhall.Add_resource_gymhall_save, name='Add_resource_gymhall_save'),
-	url(r'^add_resources_gymhall/$', addgymhall.Add_resource_gymhall_form, name='Add_resource_gymhall_form')
+	url(r'^add_resources_gymhall/$', addgymhall.Add_resource_gymhall_form, name='Add_resource_gymhall_form'),
+    url(r'^place_order_goods/$', PlaceGoodsOrder.Place_order_goods_save, name='Place_order_goods_save')
 )
