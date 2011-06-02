@@ -17,7 +17,7 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
-<<<<<<< HEAD
+
 
 
 DATABASES = {
@@ -33,19 +33,9 @@ DATABASES = {
 
 
         
-=======
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.                  # Not used with sqlite3
-        'NAME': 'sqlite3.db',                   # Or path to database file if using sqli
-        'USER': '',                             # Not used with sqlite3.
-        'PASSWORD': '',                         # Not used with sqlite3.
-        'HOST': '',                             # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',  
-    }
-}
->>>>>>> origin/master
+
+
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
