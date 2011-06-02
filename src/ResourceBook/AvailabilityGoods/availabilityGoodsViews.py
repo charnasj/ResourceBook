@@ -1,14 +1,12 @@
+import ResourceBook.ManageResources.models
 from django.views.generic.list_detail import object_list
 from django.views.generic.list_detail import object_detail
-from django.views.generic.create_update import create_object
-from django.views.generic.create_update import update_object
-from django.views.generic.create_update import delete_object
-from django.core.urlresolvers import reverse
- 
-from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render_to_response
 from ResourceBook.ManageResources.models import GoodsResource
+<<<<<<< HEAD
+=======
 from ResourceBook.ManageResources.models import Resource
+>>>>>>> origin/master
 
 #def LocalGovernment_list(request):
 #    """Show all notes"""
@@ -31,6 +29,21 @@ from ResourceBook.ManageResources.models import Resource
 #
 
 def View_available_goods(request):
+<<<<<<< HEAD
+    goods = GoodsResource.objects.get(pk=1)
+    print('TEST')
+    print(goods.name)
+    for goods in GoodsResource.objects.all():
+        print(goods.name)
+
+    return object_list(request,
+                        queryset=GoodsResource.objects.all(),
+                        template_name='ViewAvailableGoods/view_available_goods.html',
+                        template_object_name='GoodsResource')  
+
+
+def View_available_goods_detail(request, id):  
+=======
     for goods in GoodsResource.objects.all():
         print(goods.name)
     return object_list(request, 
@@ -41,9 +54,14 @@ def View_available_goods(request):
     
 def View_available_goods_detail(request, id):
     
+>>>>>>> origin/master
     return object_detail(request,
         queryset=GoodsResource.objects.all(),
         object_id=id,
         template_name='ViewAvailableGoods/detail.html',
+<<<<<<< HEAD
+        template_object_name='GoodsResource'
+=======
         template_object_name='ViewAvailableGoods'
+>>>>>>> origin/master
     )

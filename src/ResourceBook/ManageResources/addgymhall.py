@@ -14,7 +14,7 @@ from django.shortcuts import render_to_response
 def Add_resource_gymall_save(request):
     if 'client_id' in request.GET and request.GET['client_id']:
     	client_id= request.GET['client_id']
-    	client_id= User.objects.get(pk=client_id)
+    	client_id= ResourceBookUser.objects.get(pk=client_id)
     if 'Localgorvernment_ID' in request.GET and request.GET['Localgorvernment_ID']:
     	Localgorvernment_ID= request.GET['Localgorvernment_ID']
     	Localgorvernment_ID= LocalGovernment.objects.get(name=Localgorvernment_ID)

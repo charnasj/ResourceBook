@@ -15,18 +15,23 @@ ADMINS = (
     ('Mazaji Jaleh','mazaji.jaleh@unine.ch')
 )
 
-SESSION_COOKIE_SECURE = True
-
 MANAGERS = ADMINS
+
+<<<<<<< HEAD
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.S
+        'NAME': 'Q:/UniNe/E-Government Frameworks/Django-Project/ResourceBook/src/sqlite3.db',                      # Or path to database file if using sqlite
+=======
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
 <<<<<<< HEAD
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'
-        'NAME': 'C:/Users/Mahamat Abakoura/ResourceBook/src/sqlite3.db',                      # Or path to database file if using sqlit                     # Or path to database file if using sqlit
+        'NAME': 'C:/Users/Mahamat Abakoura/ResourceBook/src/sqlite3.db',                      # Or path to database file if using sqlite
 =======
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.S
-        'NAME': 'sqlite3.db',                      # Or path to database file if using sqli
+        'NAME': 'c:/users/simon/ResourceBook/src/sqlite3.db',                      # Or path to database file if using sqlite
+>>>>>>> origin/master
 >>>>>>> origin/master
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
