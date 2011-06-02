@@ -25,16 +25,9 @@ url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': set
 
     url(r'^index/$', views.index, name='index'),
     url(r'^view_available_goods/$', availabilityGoodsViews.View_available_goods, name='View_available_goods'),
+    url(r'^view_profile/$', viewProfile.View_Profile, name='View_Profile'),
 
     url(r'^view_order/$', availabilityOrderView.View_available_orders, name='View_order'),
-    
-
-    url(r'^view_profile/$', viewProfile.View_Profile, name='View_profile'),
-
-    url(r'^add_resources_goods/add_resources_goods/$', addResourcesGoods.Add_resources_goods_save, name ='Add_resources_goods_save'),
-    url(r'^add_resources_goods/$', addResourcesGoods.Add_resources_goods_form, name ='Add_resources_goods_form'),
-    url(r'^new_user/save_user/$', userRegistration.Reg_newuser_save, name='Reg_newuser_save'),
-    url(r'^new_user/$', userRegistration.Reg_newuser_form, name='Reg_newuser_form'),  
 
     url(r'^detail/(?P<id>\d+)/$', views.LocalGovernment_detail, name='LocalGovernment_detail'),
     url(r'^add_gymhall/save_resource_gymhall/$', addgymhall.Add_resource_gymhall_save, name='Add_resource_gymhall_save'),
