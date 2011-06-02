@@ -8,7 +8,6 @@ from django.core.urlresolvers import reverse
 from models import *
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render_to_response
-import userRegistration
 
 def LocalGovernment_list(request):
     """Show all notes"""
@@ -19,12 +18,11 @@ def LocalGovernment_list(request):
         template_object_name='LocalGovernment'
     )
     
-def LocalGovernment_detail(request, id, message):
+def LocalGovernment_detail(request, id):
     
     return object_detail(request,
         queryset=LocalGovernment.objects.all(),
         object_id=id,
-        object_message=message,
         template_name='ManageResources/detail.html',
         template_object_name='LocalGovernment'
     )
@@ -36,5 +34,8 @@ def Order_list(request):
                        )
 
 def index(request):
-    return HttpResponse("This is an eGovernment platform for resource management.")
+    return render_to_response('ManageResources/index.html')
+
+def Add_resources_goods_form(request):
+    return render_to_response('ManageResources/add_resources_goods.html')
 

@@ -9,8 +9,13 @@ from models import *
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render_to_response
 
+
+
 def Add_resources_goods_form(request):
     return render_to_response('ManageResources/add_resources_goods.html')
+
+def index(request):
+    return render_to_response('ManageResources/index.html')
 
 def Add_resources_goods_save(request):
     if 'name' in request.GET and request.GET['name']:
@@ -25,7 +30,12 @@ def Add_resources_goods_save(request):
     if 'vat_id' in request.GET and request.GET['vat_id']:
         vatId = request.GET['vat_id']
         vatId = VAT.objects.get(pk=vatId)
-        add_resources = Resource(name = Name, description = desc, unit_price = unitPrice, local_government_id = localGovernmentId, vat_id = vatId)
-
+    if 'quantity' in request.GET and request.GET['quantity']:
+        quantity = request.GET['quantity']
+    if 'unit_type' in request.GET and request.GET['unit_type']:
+        unitType = request.GET['unit_type']   
+    add_resources = GoodsResource(name = Name, description = desc, unit_price = unitPrice, local_government_id = localGovernmentId, vat_id = vatId,
+                             remaining_quantity = quantity, unit_type = unitType)
     add_resources.save()
-    return HttpResponse("A new Resources goods has been added!")
+    
+    return render_to_response('ManageResources/add_resources_goods_added.html')
