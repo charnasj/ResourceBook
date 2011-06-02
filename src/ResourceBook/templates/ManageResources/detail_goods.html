@@ -5,7 +5,15 @@
     <p>{{ GoodsResource.description }}</p>
     <p>{{ GoodsResource.unit_price }}</p>
     <p>{{ GoodsResource.local_government_id }}</p>
-    
+  
+  
+  <form action="save_resource_gymhall/" method="get">
+  {% csrf_token %}
+    <label for="quantity">Quantity :</label>
+	<input type="text" name="Quantity" value=" " id="Quantity">
+	<input type="hidden" name="Name" value=GoodsResource.name id="Name">
+    <br>
     <input type="submit" value="Order">
+  </form>
 
 {% endblock %}
