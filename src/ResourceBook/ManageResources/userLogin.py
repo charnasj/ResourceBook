@@ -3,8 +3,8 @@ from django.http import HttpResponse
 from django.shortcuts import render_to_response    
 
 def login_view(request):
-    username = request.POST['username']
-    password = request.POST['password']
+    username = request.GET['username']
+    password = request.GET['password']
     user = authenticate(username=username, password=password)
     if user is not None:
         if user.is_active:
