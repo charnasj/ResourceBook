@@ -14,6 +14,5 @@ def View_available_goods(request):
     queryset=GoodsResource.objects.all()
     return render_to_response('ManageResources/view_available_goods.html' , {'goods':queryset})
 
-    
 def index(request):
     return render_to_response('ManageResources/index.html')

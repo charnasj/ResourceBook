@@ -20,6 +20,7 @@ import availabilityGymHallViews
 
 
 urlpatterns = patterns('',
+
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT, 'show_indexes': False}),
     url(r'^list/$', views.LocalGovernment_list, name='LocalGovernment_list'),
 
@@ -46,11 +47,17 @@ urlpatterns = patterns('',
     url(r'^logout', userLogin.logout_view, name='Logout'),
 
 
+
     url(r'^detail/(?P<id>\d+)/$', views.LocalGovernment_detail, name='LocalGovernment_detail'),
+    url(r'^detail_goods/(?P<id>\d+)/$', views.Goods_details, name='Goods_details'),
+    url(r'^detail_rent/(?P<id>\d+)/$', views.Rent_details, name='Rent_details'),
+
 	url(r'^place_gym_order_manager/save_resource_gymhall/$', addgymhall.Add_resource_gymhall_save, name='Add_resource_gymhall_save'),
 	url(r'^place_gym_order_manager/$', addgymhall.Add_resource_gymhall_form, name='Add_resource_gymhall_form'),
+
     url(r'^detail/(?P<id>\d+)/$', views.LocalGovernment_detail, name='LocalGovernment_detail'),
 	url(r'^view_available_gymhall/$', availabilityGymHallViews.View_available_gymhall, name='View_available_gymhall'),
 	url(r'^add_resources_gymhall/save_resource_gymhall/$', addgymhall.Add_resource_gymhall_save, name='Add_resource_gymhall_save'),
-	url(r'^add_resources_gymhall/$', addgymhall.Add_resource_gymhall_form, name='Add_resource_gymhall_form')
+	url(r'^add_resources_gymhall/$', addgymhall.Add_resource_gymhall_form, name='Add_resource_gymhall_form'),
+    url(r'^place_order_goods/$', PlaceGoodsOrder.Place_order_goods_save, name='Place_order_goods_save')
 )
