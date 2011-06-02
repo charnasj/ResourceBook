@@ -6,14 +6,8 @@
 <script>
 	$(function() {
 		$("#loginButton").button();
-		$( "#dialog-form" ).dialog();
 	});
 </script>
-
-  
-  <div id="dialog-form" title="Create new user">
-	<p class="validateTips">All form fields are required.</p>
-
 	<form action="/ManageResources/login_succeed" method="get">
 	<fieldset>
 		<label for="username">Name</label>
@@ -23,5 +17,4 @@
 		<input type="submit" value="Login" id="loginButton">
 	</fieldset>
 	</form>
-</div>
 {% endblock %}
