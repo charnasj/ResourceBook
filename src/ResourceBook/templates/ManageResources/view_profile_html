@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>List of available goods from ManageResources</h1>
+
+    {% if goods %}
+    <ul>
+    {% for g in goods %}
+        <li> Name : {{g.name }} Remaining quantity : {{g.remaining_quantity}}</li>
+    {% endfor %}
+    </ul>
+    {% else %}
+    You don't have goods resource
+    {% endif %}
+{% endblock %}
