@@ -35,7 +35,6 @@ def View_available_goods(request):
     )  
     
 def View_available_goods_detail(request, id):
-    
     return object_detail(request,
         queryset=GoodsResource.objects.all(),
         object_id=id,
