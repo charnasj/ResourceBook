@@ -12,11 +12,8 @@ from ResourceBook.ManageResources.models import Resource
 
 
 def View_available_gymhall(request):
-    for gymhall in Resource.objects.all():
-        print(gymhall.id)
-
-        queryset=RentResource.objects.all()
-        return render_to_response('ManageResources/view_available_gymhall.html' , {'gymhall':queryset})
+    queryset=RentResource.objects.all()
+    return render_to_response('ManageResources/view_available_gymhall.html' , {'gymhall':queryset})
 
     
 def View_available_gymhall_detail(request, id):

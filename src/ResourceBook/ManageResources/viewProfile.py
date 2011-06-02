@@ -18,19 +18,20 @@ def View_Profile(request):
         get_id = request.GET['id_profile']
     print("ID : " + get_id)
     
-    queryset = Customer.objects.get( User.objects.get(pk = get_id))
+    queryset_customer = Customer.objects.get(pk=get_id)
     
-    print(queryset.shipping_address)
-    
-    
-    queryset_user = User.objects.get( queryset.objects.get(user_ptr_id = queryset.id) )
+    print(queryset_customer.shipping_address)
     
     
+    queryset_user = User.objects.get( pk = queryset_customer.user_id )
     
-  #  queryset_order = Order.objects.get(customer_id = queryset.id)
+    print(queryset_user.pk)
+    print(queryset_user.username)
+    
+    queryset_order = Order.objects.get(customer_id = queryset_customer.id)
 
-    return render_to_response('ManageResources/view_profile.html' , {'customer':queryset, 'order':queryset_order, 'user':queryset_user})
-
+    #return render_to_response('ManageResources/view_profile.html' , {'customer':queryset_customer, 'user':queryset_user})
+    return render_to_response('ManageResources/view_profile.html' , {'customer':queryset_customer, 'order':queryset_order, 'user':queryset_user})
     
 def index(request):
     return render_to_response('ManageResources/index.html')
