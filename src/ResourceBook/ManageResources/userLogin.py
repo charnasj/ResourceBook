@@ -12,6 +12,8 @@ def login_view(request):
             return HttpResponse("You provided a correct username and password!")
         else:
             return HttpResponse("Your account has been disabled!")
+    else:
+        return HttpResponse("Wrong username or password!")
 
 def logout_view(request):
     logout(request)
