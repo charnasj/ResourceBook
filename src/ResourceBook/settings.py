@@ -19,9 +19,7 @@ DATABASES = {
     'default': {
 
 
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'
-        'NAME': 'C:/Users/Mahamat Abakoura/ResourceBook/src/sqlite3.db',                      # Or path to database file if using sqlit                     # Or path to database file if using sqli
-        
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle                   # Or path to database file if using sqli
         'NAME': 'sqlite3.db',                      # Or path to database file if using sql
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
@@ -79,7 +77,7 @@ STATIC_ROOT = 'templates/static'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = 'http://http://localhost:8000/static/'
+STATIC_URL = 'http://localhost:8000/static/'
 
 # URL prefix for admin static files -- CSS, JavaScript and images.
 # Make sure to use a trailing slash.

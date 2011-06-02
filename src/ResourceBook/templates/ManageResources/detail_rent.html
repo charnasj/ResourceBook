@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="save_user/" method="get">
+    <h2>{{ RentResource.name }}</h2>
+    <p>{{ RentResource.description }}</p>
+    <p>{{ RentResource.unit_price }}</p>
+    <p>{{ RentResource.address }}</p>
+	<input type="submit" value="Book">
+</form>
+
+{% endblock %}
