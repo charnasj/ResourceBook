@@ -7,12 +7,15 @@ from django.core.urlresolvers import reverse
  
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render_to_response
-from ResourceBook.ManageResources.models import GoodsResource
-from ResourceBook.ManageResources.models import Resource
+from ResourceBook.ManageResources.models import Customer
+from ResourceBook.ManageResources.models import Order
 
-def View_available_goods(request):
-    queryset=GoodsResource.objects.all()
-    return render_to_response('ManageResources/view_available_goods.html' , {'goods':queryset})
+def View_Profile(request):
+    if 'id_profile' in request.GET and request.GET['id_profile']:
+        id= request.GET['id_profile']
+    queryset=Customer.objects.get(pk=id)
+    queryset_order = Order.objects.get(customer_id = id)
+    return render_to_response('ManageResources/view_profile.html' , {'user':queryset, 'order':queryset_order})
 
     
 def index(request):
