@@ -1,7 +1,4 @@
 from django.conf.urls.defaults import *
-
-#
-# Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
 
@@ -19,6 +16,8 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
     url(r'^ManageResources/$','ManageResources.views.index'),
+    url(r'^AvailabilityGoods/', include('AvailabilityGoods.urls')),
     url(r'^ManageResources/', include('ManageResources.urls')),
     url(r'^PlaceOrder/', include('PlaceOrder.urls')),
+#    url(r'^AvailabilityGoods/', include('AvailabilityGoods.urls'))
 )

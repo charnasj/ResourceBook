@@ -1,8 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>Place an order</h1>
-
+  <h1>Register a new user</h1>
   <form action="save_user/" method="get">
   {% csrf_token %}
   	<label for="firstName">First Name:</label>
@@ -15,7 +14,7 @@
     <input type="text" name="username" value="" id="username">
     <br>
     <label for="password">Password:</label>
-    <input type="text" name="password" value="" id="password">
+    <input type="password" name="password" value="" id="password">
     <br>
     <label for="address">Address:</label>
     <input type="textarea" name="address" value="" id="address">

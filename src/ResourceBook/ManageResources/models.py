@@ -1,19 +1,15 @@
 from django.db import models
+from django.contrib.auth.models import User
 
-# Create your models here.
 
 class LocalGovernment (models.Model):
     name = models.CharField(max_length=70)
     address = models.TextField()
     phone = models.CharField(max_length=13)
 
-class User (models.Model):
-    first_name = models.CharField(max_length=70)
-    last_name = models.CharField(max_length=70)
-    username = models.CharField(max_length=70)
-    password = models.CharField(max_length=70)
+class ResourceBookUser (models.Model):
+    user = models.ForeignKey(User)
     address = models.CharField(max_length=70)
-    email = models.EmailField()
     phone = models.CharField(max_length=13)    
 
 class VAT (models.Model):
@@ -25,10 +21,10 @@ class VAT (models.Model):
     next = models.IntegerField() # VAT ID link...
 
 
-class Customer (User):
+class Customer (ResourceBookUser):
     shipping_address = models.CharField(max_length=70)
     
-class ResourceManager (User):
+class ResourceManager (ResourceBookUser):
     description = models.CharField(max_length=70)
     
     
@@ -93,7 +89,7 @@ class RentReservation (models.Model):
     start = models.DateTimeField()
     finish = models.DateTimeField()
     rent_resource_id = models.ForeignKey(RentResource)
-    customer_id = models.ForeignKey(User)
+    customer_id = models.ForeignKey(ResourceBookUser)
     order_item_id = models.ForeignKey(OrderItem)
     
 class GoodsOrderItem (OrderItem):

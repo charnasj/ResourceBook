@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>This is an eGovernment platform for resource management</h2>
+    <ul>
+    <li><a href="{% url Add_resources_goods_form %}">Add goods resource</a></li>
+    <li><a href="{% url Add_resource_gymhall_form %}">Add gymhall resource</a></li>
+    <li><a href="{% url View_available_goods %}">View goods resource</a></li>
+	</ul>
+	<form action="View_profile/" method="get">
+  	{% csrf_token %}
+  		<label for="id_profile">Id of the user</label>
+		<input type="text" name="id_profile" value="" id="id_profile">
+    	<input type="submit" value="View Profile">
+  	</form>
+	
+{% endblock %}
