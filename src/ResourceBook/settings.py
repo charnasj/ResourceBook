@@ -1,6 +1,4 @@
 # Django settings for ResourceBook project.
-# jaleh
-#it works
 
 import os
 

@@ -4,7 +4,8 @@
   <h1>List of orders</h1>
   
   {% if orders %}
-    <table width=70% border=2>
+  <center>
+    <table width=100% border=1 align=center bordercolor=black>
     	<tr>
     		<th>Name</th>
     		<th>Description</th>
@@ -14,16 +15,16 @@
     	</tr>
     	 {% for o in orders %}
     	 	<tr>
-    	 		<td>o.name</td>
-    	 		<td>o.description</td>
-    	 		<td>o.unit_price</td>
-    	 		<td>o.order_id</td>
-    	 		<td>o.resource_id</td>
+    	 		<td>{{ o.name }}</td>
+    	 		<td>{{ o.description }}</td>
+    	 		<td>{{ o.unit_price }}</td>
+    	 		<td>{{ o.order_id.id }}</td>
+    	 		<td>{{ o.resource_id.id }}</td>
     	 	</tr>
     	 {% endfor %}
     
     </table>
-
+    </center>
     {% else %}
     There are no active orders
     {% endif %}  
