@@ -30,7 +30,7 @@ def Add_resource_gymall_save(request):
         startdate= request.GET['startdate']
     if 'finishdate' in request.GET and request.GET['finishdate']:
         finishdate= request.GET['finishdate']
-    vat = VAT.objects.get(name='basic')
+    vat = VAT.objects.get(name='VAT1')
     add_gymHall = RentResource(name=name, description=description,unit_price= unit_price, local_government_id = Localgorvernment_ID,vat_id = vat, address=address)
     #add_gymHall_dates = RentReservation(start=startdate, finish=finishdate,rent_resource_id=1,customer_id=1,order_item_id=1)
         

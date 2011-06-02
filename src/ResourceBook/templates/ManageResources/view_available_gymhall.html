@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>List of available Gym halls from ManageResources</h1>
+
+    {% if gymhall %}
+    <ul>
+    {% for g in gymhall %}
+        <li> Name : {{g.name }} address : {{g.address}}  description: {{g.description}}  price : {{g.unit_price}}</li>
+    {% endfor %}
+    </ul>
+    {% else %}
+    You don't have gym hall resource
+    {% endif %}
+{% endblock %}
