@@ -93,7 +93,7 @@ STATIC_ROOT = 'C:/Users/unine/Desktop/eclipse/workshopjango/ResourceBook/src/Res
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = 'C:/Users/unine/Desktop/eclipse/workshopjango/ResourceBook/src/ResourceBook/ManageResources/static'
+STATIC_URL = 'http://localhost:8000/static/'
 
 # URL prefix for admin static files -- CSS, JavaScript and images.
 # Make sure to use a trailing slash.
