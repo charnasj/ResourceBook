@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>List of available goods from ManageResources</h1>
+
+    {% if user %}
+    <ul>
+    <li> Name : {{user.name }} shipping address : {{user.shipping_address}}</li>
+    {% for o in order %}
+        <li> Order date : {{o.order_date }} Status : {{o.status}}</li>
+    {% endfor %}
+    </ul>
+    {% else %}
+    You don't have goods resource
+    {% endif %}
+{% endblock %}

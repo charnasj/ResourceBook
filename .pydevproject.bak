@@ -1,4 +1,22 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse-pydev version="1.0"?>
+
+<pydev_project>
+<pydev_property name="org.python.pydev.PYTHON_PROJECT_INTERPRETER">Default</pydev_property>
+<pydev_property name="org.python.pydev.PYTHON_PROJECT_VERSION">python 2.7</pydev_property>
+<pydev_variables_property name="org.python.pydev.PROJECT_VARIABLE_SUBSTITUTION">
+<key>DJANGO_MANAGE_LOCATION</key>
+<value>src/ResourceBook/manage.py</value>
+</pydev_variables_property>
+<pydev_pathproperty name="org.python.pydev.PROJECT_SOURCE_PATH">
+<path>/ResourceBook/src</path>
+</pydev_pathproperty>
+</pydev_project>
+=======
+=======
+>>>>>>> origin/master
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?eclipse-pydev version="1.0"?>
 
@@ -13,6 +31,8 @@
 <path>/ResourceBook/src</path>
 </pydev_pathproperty>
 </pydev_project>
+<<<<<<< HEAD
+=======
 =======
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?eclipse-pydev version="1.0"?>
@@ -28,4 +48,5 @@
 <path>/ResourceBook/src</path>
 </pydev_pathproperty>
 </pydev_project>
+>>>>>>> origin/master
 >>>>>>> origin/master
