@@ -2,7 +2,7 @@
 
 {% block content %}
 <h1>List of available Gym halls from ManageResources</h1>
-
+	<li><a href="{% url index %}">Return to index</a></li>
     {% if gymhall %}
     <ul>
     {% for g in gymhall %}

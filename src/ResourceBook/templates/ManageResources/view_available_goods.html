@@ -2,7 +2,7 @@
 
 {% block content %}
 <h1>List of available goods from ManageResources</h1>
-
+	<li><a href="{% url index %}">Return to index</a></li>
     {% if goods %}
     <ul>
     {% for g in goods %}
