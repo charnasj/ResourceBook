@@ -57,8 +57,10 @@ USE_I18N = True
 USE_L10N = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
+
 # Example: "/home/media/media.lawrence.com/media/"
 
+# Example: "/home/media/media.lawrence.com/media/
 MEDIA_ROOT = 'templates/media'
 
 
@@ -70,9 +72,12 @@ MEDIA_URL = 'http://localhost:8000/'
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
+
+# Example: "/home/media/media.lawrence.com/static/"
 # Example: "/home/media/media.lawrence.com/static/"
 
 STATIC_ROOT = 'templates/static'
+
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
