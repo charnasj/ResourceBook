@@ -39,8 +39,11 @@ def Add_resource_gymall_save(request):
     #add_gymHall_address.save()
     #add_gymHall_dates.save()
     
-    return HttpResponse("Gym Hall added")
+    return render_to_response('ManageResources/add_resource_gymhall_added.html')
 
     
-def Add_resource_gymall_form(request):
+def Add_resource_gymhall_form(request):
     return render_to_response('ManageResources/add_resource_gymhall.html')
+
+def index(request):
+    return render_to_response('ManageResources/index.html')

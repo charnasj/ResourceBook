@@ -2,6 +2,9 @@
 
 {% block content %}
     <h2>This is an eGovernment platform for resource management</h2>
-    <a href="{% url Add_resources_goods_form %}">Add resource</a>
-
+    <ul>
+    <li><a href="{% url Add_resources_goods_form %}">Add goods resource</a></li>
+    <li><a href="{% url Add_resource_gymhall_form %}">Add gymhall resource</a></li>
+    <li><a href="{% url View_available_goods %}">View goods resource</a></li>
+	</ul>
 {% endblock %}
