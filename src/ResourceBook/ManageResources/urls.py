@@ -33,8 +33,7 @@ urlpatterns = patterns('',
     url(r'^detail/(?P<id>\d+)/$', views.LocalGovernment_detail, name='LocalGovernment_detail'),
     url(r'^add_gymhall/save_resource_gymhall/$', addgymhall.Add_resource_gymhall_save, name='Add_resource_gymhall_save'),
     url(r'^add_gymhall/$', addgymhall.Add_resource_gymhall_form, name='Add_resource_gymhall_form'),
-#    url(r'^place_goods_order/$', PlaceGoodsOrder.getGoodsOrderForm, name='Place_goods_order'),
-#    url(r'^place_goods_order/create_order$', PlaceGoodsOrder.placeGoodsOrder, name='Place_goods_order_form'),
+
 	url(r'^place_gym_order_manager/save_resource_gymhall/$', addgymhall.Add_resource_gymhall_save, name='Add_resource_gymhall_save'),
 	url(r'^place_gym_order_manager/$', addgymhall.Add_resource_gymhall_form, name='Add_resource_gymhall_form'),
 
