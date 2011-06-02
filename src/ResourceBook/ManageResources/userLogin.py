@@ -9,15 +9,16 @@ def login_view(request):
     if user is not None:
         if user.is_active:
             login(request, user)
-            return HttpResponse("You provided a correct username and password!")
+            return render_to_response('ManageResources/login_succeed.html')
         else:
             return HttpResponse("Your account has been disabled!")
     else:
-        return HttpResponse("Wrong username or password!")
+        return render_to_response('ManageResources/login_failed.html')
 
 def logout_view(request):
     logout(request)
-    return HttpResponse("Successfully logged out. See you again soon!")
+    response = HttpResponse("Successfully logged out. See you again soon!")
+    return response
 
 def login_form(request):
     return render_to_response('ManageResources/login.html')
