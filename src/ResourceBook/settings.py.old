@@ -16,29 +16,30 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
-<<<<<<< HEAD
-                  
-=======
 
->>>>>>> origin/master
+<<<<<<< HEAD
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.S
+        'NAME': 'Q:/UniNe/E-Government Frameworks/Django-Project/ResourceBook/src/sqlite3.db',                      # Or path to database file if using sqlite
+=======
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
 <<<<<<< HEAD
-        'NAME': 'c:/users/jaleh/ResourceBook/src/sqlite3.db',                      # Or path to database file if using sqlite3
+        'NAME': 'C:/Users/Mahamat Abakoura/ResourceBook/src/sqlite3.db',                      # Or path to database file if using sqlite
+=======
+        'NAME': 'c:/users/simon/ResourceBook/src/sqlite3.db',                      # Or path to database file if using sqlite
+>>>>>>> origin/master
+>>>>>>> origin/master
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-=======
-        'NAME': 'sqlite3.db',                   # Or path to database file if using sqli
-        'USER': '',                             # Not used with sqlite3.
-        'PASSWORD': '',                         # Not used with sqlite3.
-        'HOST': '',                             # Set to empty string for localhost. Not used with sqlite3.
->>>>>>> origin/master
         'PORT': '',  
+                            # Set to empty string for default. Not used with sqlite3.
     }
-} 
-           
+}            
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name

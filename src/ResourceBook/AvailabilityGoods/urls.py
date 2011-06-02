@@ -1,5 +1,4 @@
 from django.conf.urls.defaults import *
-
 import availabilityGoodsViews
 
 urlpatterns = patterns('', 
