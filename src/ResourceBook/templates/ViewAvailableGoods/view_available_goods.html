@@ -3,18 +3,27 @@
 {% block content %}
 <h1>List of available goods</h1>
 
-/*
-    {% if LocalGovernment_list %}
+<<<<<<< HEAD
+
+    {% if View_available_goods %}
     <ul>
-    {% for LocalGovernment in LocalGovernment_list %}
-        <li><a href="{% url LocalGovernment_detail LocalGovernment.id %}">{{ LocalGovernment.name }}</a>  <small>{{LocalGovernment.address}}</small</li>
+    {% for GoodsResource in View_available_goods %}
+        <li>{{ GoodsResource.name }}</li>
     {% endfor %}
     </ul>
     {% else %}
-    You don't have a local Government
+    You don't have goods resources
     {% endif %}
-    <p><label for="id_subject">Subject:</label>
-    <input id="id_message" type="text" name="subject" maxlength="100" /></p>
-    <input type="submit" value="Go" name=href="{% url LocalGovernment_detail LocalGovernment.id %}">{{ LocalGovernment.name }  />
-	*/
 {% endblock %}
+=======
+    {% if View_available_goods %}
+    <ul>
+    {% for GoodsResource in View_available_goods %}
+        <li> <a href="{% url View_available_goods_detail GoodsResource.id%}">{{ TEST }}</a></li>
+    {% endfor %}
+    </ul>
+    {% else %}
+    You don't have goods resource
+    {% endif %}
+{% endblock %}
+>>>>>>> origin/master

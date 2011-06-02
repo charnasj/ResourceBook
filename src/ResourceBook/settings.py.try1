@@ -12,26 +12,30 @@ ADMINS = (
     ('Simon Brunner','simon.brunner@unine.ch'),
     ('Stephane Costa', 'stephane.costa@unine.ch'),
     ('Abakoura Mahamat','abakoura.mahamat@unine.ch'),
-    ('Mazaji Jaleh','mazaji.jaleh@unine.ch'),
-    ('Askri safwen','safwen.askri@unine.ch')
+    ('Mazaji Jaleh','mazaji.jaleh@unine.ch')
 )
 
 MANAGERS = ADMINS
 
-
+<<<<<<< HEAD
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'C:/Users/unine/Desktop/eclipse/workshopjango/ResourceBook/src/sqlite3.db',                      # Or path to database file if using sqlite
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.S
+        'NAME': 'Q:/BeNeFri/E-Government Frameworks/Django-Project/ResourceBook/src/sqlite3.db',                      # Or path to database file if using sqlite
+		}
+	}
+		
+=======
+
+
+>>>>>>> origin/master
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',  
-          }}                  # Set to empty string for default. Not used with sqlite3.
-
-
-
-        
+                            # Set to empty string for default. Not used with sqlite3.
+    }
+}            
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
