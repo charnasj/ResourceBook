@@ -3,10 +3,11 @@
 {% block content %}
 <h1>List of available goods from ManageResources</h1>
 
-    {% if goods %}
+    {% if user %}
     <ul>
-    {% for g in goods %}
-        <li> Name : {{g.name }} Remaining quantity : {{g.remaining_quantity}}</li>
+    <li> Name : {{user.name }} shipping address : {{user.shipping_address}}</li>
+    {% for o in order %}
+        <li> Order date : {{o.order_date }} Status : {{o.status}}</li>
     {% endfor %}
     </ul>
     {% else %}
