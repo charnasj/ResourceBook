@@ -3,14 +3,18 @@
 {% block content %}
   <h1>User Login</h1>
 
-  <form action="login_succeed/" method="get">
-  {% csrf_token %}
-    <label for="username">Username:</label>
-    <input type="text" name="username" value="" id="username">
-    <br>
-    <label for="password">Password:</label>
-    <input type="password" name="password" value="" id="password">
-    <br>
-    <input type="submit" value="Login">
-  </form>
+<script>
+	$(function() {
+		$("#loginButton").button();
+	});
+</script>
+	<form action="/ManageResources/login_succeed" method="get">
+	<fieldset>
+		<label for="username">Name</label>
+		<input type="text" name="username" id="username" class="text ui-widget-content ui-corner-all" />
+		<label for="password">Password</label>
+		<input type="password" name="password" id="password" value="" class="text ui-widget-content ui-corner-all" />
+		<input type="submit" value="Login" id="loginButton">
+	</fieldset>
+	</form>
 {% endblock %}
