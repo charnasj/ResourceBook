@@ -2,12 +2,10 @@ from django.conf.urls.defaults import *
 
 import views
 import addResourcesGoods
-<<<<<<< HEAD
 import addgymhall
 import availabilityGoodsViews
 import availabilityOrderView
 
-=======
 import addgymhall
 from ResourceBook.ManageResources import userLogin,userRegistration
 import availabilityGoodsViews
