@@ -1,5 +1,5 @@
 from models import *
-from django.http import HttpRequest, HttpResponse
+from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from django.contrib.auth.models import User
 
@@ -35,11 +35,4 @@ def Reg_newuser_save(request):
     return HttpResponse("A new ResourceBookUser has been saved!")
 
 def Reg_newuser_form(request):
-   # if 'firstName' in request.GET and request.GET['firstName']:
-    #    firstName= request.GET['firstName']
-    #if 'lastName' in request.GET and request.GET['lastName']:
-    #    lastName= request.GET['lastName']
-#    new_user = ResourceBookUser(first_name=firstName, last_name=lastName)
-
-    #return render_to_response('see_my_post.html', {'my_comment' : my_comment})
     return render_to_response('ManageResources/new_user.html')

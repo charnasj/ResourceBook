@@ -4,6 +4,7 @@ import views
 import userRegistration
 import addResourcesGoods
 import addgymhall
+from ResourceBook.ManageResources import userLogin
 
 urlpatterns = patterns('', 
     
@@ -11,7 +12,9 @@ urlpatterns = patterns('',
     url(r'^add_resources_goods/add_resources_goods/$', addResourcesGoods.Add_resources_goods_save, name ='Add_resources_goods_save'),
     url(r'^add_resources_goods/$', addResourcesGoods.Add_resources_goods_form, name ='Add_resources_goods_form'),
     url(r'^new_user/save_user/$', userRegistration.Reg_newuser_save, name='Reg_newuser_save'),
-    url(r'^new_user/$', userRegistration.Reg_newuser_form, name='Reg_newuser_form'),  
+    url(r'^new_user/$', userRegistration.Reg_newuser_form, name='Reg_newuser_form'), 
+    url(r'^loginReq', userLogin.login_view, name='Login'),
+    url(r'^logout', userLogin.logout_view, name='Logout'),
     url(r'^detail/(?P<id>\d+)/$', views.LocalGovernment_detail, name='LocalGovernment_detail'),
 	url(r'^place_gym_order_manager/save_resource_gymhall/$', addgymhall.Add_resource_gymall_save, name='Add_resource_gymall_save'),
 	url(r'^place_gym_order_manager/$', addgymhall.Add_resource_gymall_form, name='Add_resource_gymall_form'),

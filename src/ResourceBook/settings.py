@@ -15,12 +15,14 @@ ADMINS = (
     ('Mazaji Jaleh','mazaji.jaleh@unine.ch')
 )
 
+SESSION_COOKIE_SECURE = True
+
 MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.S
-        'NAME': 'Q:/UniNe/E-Government Frameworks/Django-Project/ResourceBook/src/sqlite3.db',                      # Or path to database file if using sqlite
+        'NAME': 'sqlite3.db',                      # Or path to database file if using sqlite
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
