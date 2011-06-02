@@ -84,7 +84,6 @@ class GoodsResource (Resource):
 class RentResource (Resource):
     address = models.TextField()
     
-    
 class RentReservation (models.Model):
     start = models.DateTimeField()
     finish = models.DateTimeField()
