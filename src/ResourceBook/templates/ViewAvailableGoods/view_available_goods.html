@@ -3,6 +3,7 @@
 {% block content %}
 <h1>List of available goods</h1>
 
+<<<<<<< HEAD
 
     {% if View_available_goods %}
     <ul>
@@ -14,3 +15,15 @@
     You don't have goods resources
     {% endif %}
 {% endblock %}
+=======
+    {% if View_available_goods %}
+    <ul>
+    {% for GoodsResource in View_available_goods %}
+        <li> <a href="{% url View_available_goods_detail GoodsResource.id%}">{{ TEST }}</a></li>
+    {% endfor %}
+    </ul>
+    {% else %}
+    You don't have goods resource
+    {% endif %}
+{% endblock %}
+>>>>>>> origin/master
