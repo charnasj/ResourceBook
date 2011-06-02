@@ -15,8 +15,8 @@ urlpatterns = patterns('',
     # url(r'^accounts/', include('registration.backends.default.urls')),
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^AvailabilityGoods/', include('AvailabilityGoods.urls')),
     url(r'^ManageResources/$','ManageResources.views.index'),
+    url(r'^AvailabilityGoods/', include('AvailabilityGoods.urls')),
     url(r'^ManageResources/', include('ManageResources.urls')),
     url(r'^PlaceOrder/', include('PlaceOrder.urls')),
 #    url(r'^AvailabilityGoods/', include('AvailabilityGoods.urls'))
