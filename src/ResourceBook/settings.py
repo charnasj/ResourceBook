@@ -22,6 +22,7 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
+
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'C:/Users/unine/Desktop/eclipse/workshopjango/ResourceBook/src/sqlite3.db',                      # Or path to database file if using sqlite
         'USER': '',                      # Not used with sqlite3.
@@ -33,7 +34,6 @@ DATABASES = {
 
 
         
-
 
 
 
@@ -61,28 +61,44 @@ USE_I18N = True
 USE_L10N = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
+
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = 'C:/Users/unine/Desktop/eclipse/workshopjango/ResourceBook/src/ResourceBook/ManageResources/media'
+
+MEDIA_ROOT = 'C:/Users/unine/Desktop/eclipse/workshopjango/ResourceBook/src/ResourceBook/templates/media'
+
+
+# Example: "/home/media/media.lawrence.com/media/
+
+
+
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = 'http://localhost:8000/'
+MEDIA_URL = 'C:/Users/unine/Desktop/eclipse/workshopjango/ResourceBook/src/ResourceBook/templates/media'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
+
 # Example: "/home/media/media.lawrence.com/static/"
+
 STATIC_ROOT = 'C:/Users/unine/Desktop/eclipse/workshopjango/ResourceBook/src/ResourceBook/ManageResources/static'
+
+# Example: "/home/media/media.lawrence.com/static/"
+
+
+
+
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = 'http://http://localhost:8000/static/'
+STATIC_URL = 'C:/Users/unine/Desktop/eclipse/workshopjango/ResourceBook/src/ResourceBook/ManageResources/static'
 
 # URL prefix for admin static files -- CSS, JavaScript and images.
 # Make sure to use a trailing slash.
 # Examples: "http://foo.com/static/admin/", "/static/admin/".
-ADMIN_MEDIA_PREFIX = '/static/admin/'
+ADMIN_MEDIA_PREFIX = 'C:/Users/unine/Desktop/eclipse/workshopjango/ResourceBook/src/ResourceBook/ManageResources/static/admin/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (

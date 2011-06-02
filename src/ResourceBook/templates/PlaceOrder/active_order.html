@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>List of orders</h1>
+  
+  {% if orders %}
+    <table width=70% border=2>
+    	<tr>
+    		<th>Name</th>
+    		<th>Description</th>
+    		<th>Unit Price</th>
+    		<th>Order ID</th>
+    		<th>Resource ID</th>
+    	</tr>
+    	 {% for o in orders %}
+    	 	<tr>
+    	 		<td>o.name</td>
+    	 		<td>o.description</td>
+    	 		<td>o.unit_price</td>
+    	 		<td>o.order_id</td>
+    	 		<td>o.resource_id</td>
+    	 	</tr>
+    	 {% endfor %}
+    
+    </table>
+
+    {% else %}
+    There are no active orders
+    {% endif %}  
+  
+{% endblock %}
