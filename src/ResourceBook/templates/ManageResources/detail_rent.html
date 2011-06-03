@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 <style type="text/css">
-#a
+td.a
 {
 text-align:right;
 color:red;
 }
-#b
+b
 {
 text-align:left;
 }
@@ -13,17 +13,17 @@ text-align:left;
 
 
 {% block content %}
-<form action="save_user/" method="get">
+<form action="place_gym_order/" method="get">
 	<fieldset>
-	<h2>{{ RentResource.name }}</h2>
+	<h2>{{ gymResource.name }}</h2>
 	
 	<table>
-	<tr>
-		<td>
+	<tr >
+		<td style="text-align:right;">
 		Description:
 		</td>
-		<td>
-		<p>{{ RentResource.description }}</p>
+		<td class="b">
+		<p>{{ gymResource.description }}</p>
 		</td>
 	</tr>
     
@@ -32,7 +32,7 @@ text-align:left;
 		Price:
 		</td>
 		<td>
-		<p>{{ RentResource.unit_price }}</p>
+		<p>{{ gymResource.unit_price }}</p>
 		</td>
 	</tr>
     
@@ -41,7 +41,17 @@ text-align:left;
 		Address:
 		</td>
 		<td>
-		 <p>{{ RentResource.address }}</p>
+		{{ current_date }}
+		 <p>{{ gymResource.address }}</p>
+		</td>
+	</tr>
+<!-- {{ someDate }} -->
+	<tr>
+		<td>
+			<input type="text" name="startDate" value="" id="startDate" format="%d.%m.%Y" >
+		</td>
+		<td>
+		 <input type="submit" value="Book">
 		</td>
 	</tr>
    <tr>
@@ -51,6 +61,7 @@ text-align:left;
 		 <input type="submit" value="Book">
 		</td>
 	</tr>
+	
 	</table>
 	</fieldset>
 </form>
