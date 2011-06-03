@@ -60,5 +60,5 @@ urlpatterns = patterns('',
 	url(r'^add_resources_gymhall/$', addgymhall.Add_resource_gymhall_form, name='Add_resource_gymhall_form'),
     
     url(r'^place_goods_order/$', PlaceGoodsOrder.Place_order_goods_form, name='Place_order_goods_form'),
-    url(r'^place_goods_order/save_order_goods/$', PlaceGoodsOrder.Place_order_goods_save, name='Place_order_goods_save')
+    url(r'^save_goods_order/$', PlaceGoodsOrder.Place_order_goods_save, name='Place_order_goods_save')
 )

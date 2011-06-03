@@ -2,6 +2,7 @@ import ResourceBook.ManageResources.models
 from django.views.generic.list_detail import object_list
 from django.views.generic.list_detail import object_detail
 from django.shortcuts import render_to_response
+from ResourceBook.ManageResources.models import GoodsResource
 from ResourceBook.ManageResources.models import Resource
 
 #def LocalGovernment_list(request):
