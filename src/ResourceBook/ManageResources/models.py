@@ -55,14 +55,14 @@ class InvoiceLine (models.Model):
     name = models.CharField(max_length=70)
     description = models.CharField(max_length=70)
     dueDate = models.DateTimeField(auto_now=True)
-    units = models.IntegerField()
-    amount = models.BigIntegerField()
-    total = models.BigIntegerField()
-    totalExcl = models.BigIntegerField()
-    totalIncl = models.BigIntegerField()
+    units = models.IntegerField(null=True)
+    amount = models.BigIntegerField(null=True)
+    total = models.BigIntegerField(null=True)
+    totalExcl = models.BigIntegerField(null=True)
+    totalIncl = models.BigIntegerField(null=True)
     periodStart = models.DateTimeField(auto_now=True)
     periodEnd = models.DateTimeField(auto_now=True)
-    vat_id  = models.ForeignKey(VAT)
+    vat_id  = models.ForeignKey(VAT,null=True)
     #invoice_id = models.ForeignKey(Invoice)
     
 class Order (models.Model):
@@ -79,11 +79,12 @@ class OrderItem (models.Model):
     resource_id = models.ForeignKey(Resource)
     #invoice_line_id = models.ForeignKey(InvoiceLine)
     
-    def _pre_save(self):
-        targetResource  = Resource.objects.get( id=resource_id )
-        name            = targetResource.name
-        description     = targetResource.description
-        unit_price      = targetResource.unit_price
+    def save(self, *args, **kwargs):
+        targetResource  = Resource.objects.get( id=self.resource_id.id )
+        self.name            = targetResource.name
+        self.description     = targetResource.description
+        self.unit_price      = targetResource.unit_price
+        super(OrderItem, self).save(*args, **kwargs) # Call the "real" save() method.
         
 class GoodsResource (Resource):
     remaining_quantity = models.PositiveIntegerField()
@@ -91,7 +92,6 @@ class GoodsResource (Resource):
     
 class RentResource (Resource):
     address = models.TextField()
-    
     
 class RentReservation (models.Model):
     start = models.DateTimeField()

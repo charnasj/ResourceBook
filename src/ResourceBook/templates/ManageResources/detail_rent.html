@@ -1,11 +1,58 @@
 {% extends 'base.html' %}
+<style type="text/css">
+#a
+{
+text-align:right;
+color:red;
+}
+#b
+{
+text-align:left;
+}
+</style>
+
 
 {% block content %}
-    <h2>{{ RentResource.name }}</h2>
-    <p>{{ RentResource.description }}</p>
-    <p>{{ RentResource.unit_price }}</p>
-    <p>{{ RentResource.address }}</p>
+<form action="save_user/" method="get">
+	<fieldset>
+	<h2>{{ RentResource.name }}</h2>
+	
+	<table>
+	<tr>
+		<td>
+		Description:
+		</td>
+		<td>
+		<p>{{ RentResource.description }}</p>
+		</td>
+	</tr>
     
+    <tr>
+		<td>
+		Price:
+		</td>
+		<td>
+		<p>{{ RentResource.unit_price }}</p>
+		</td>
+	</tr>
     
+    <tr>
+		<td>
+		Address:
+		</td>
+		<td>
+		 <p>{{ RentResource.address }}</p>
+		</td>
+	</tr>
+   <tr>
+		<td>
+		</td>
+		<td>
+		 <input type="submit" value="Book">
+		</td>
+	</tr>
+	</table>
+	</fieldset>
+</form>
 
 {% endblock %}

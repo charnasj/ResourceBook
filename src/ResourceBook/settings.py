@@ -4,25 +4,30 @@ import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+
 ADMINS = (
     ('Jonathan Charnas', 'jonathan.charnas@unine.ch'),
     ('Stephane Donnet', 'stephane.donnet@unine.ch'),
-    ('Simon Brunner','simon.brunner@unine.ch'),
+    ('Simon Brunner', 'simon.brunner@unine.ch'),
     ('Stephane Costa', 'stephane.costa@unine.ch'),
-    ('Abakoura Mahamat','abakoura.mahamat@unine.ch'),
-    ('Mazaji Jaleh','mazaji.jaleh@unine.ch')
+    ('Abakoura Mahamat', 'abakoura.mahamat@unine.ch'),
+    ('Mazaji Jaleh', 'mazaji.jaleh@unine.ch')
 )
 
 MANAGERS = ADMINS
 
+SESSION_ENGINE = 'django.contrib.sessions.backends.file'
+
+SESSION_FILE_PATH = 'tmp'
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.S
-        'NAME': 'sqlite3.db',                      # Or path to database file if using sqli
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',  
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle                   # Or path to database file if using sqli
+        'NAME': 'sqlite3.db', # Or path to database file if using sql
+        'USER': '', # Not used with sqlite3.
+        'PASSWORD': '', # Not used with sqlite3.
+        'HOST': '', # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',
 
     }
 }
@@ -75,7 +80,7 @@ STATIC_ROOT = 'templates/static'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = 'http://http://localhost:8000/static/'
+STATIC_URL = 'http://localhost:8000/static/'
 
 # URL prefix for admin static files -- CSS, JavaScript and images.
 # Make sure to use a trailing slash.
@@ -120,6 +125,15 @@ ROOT_URLCONF = 'ResourceBook.urls'
 
 PROJECT_ROOT = os.path.realpath(os.path.dirname(__file__))
 
+TEMPLATE_CONTEXT_PROCESSORS = ("django.core.context_processors.request",
+                             "django.contrib.auth.context_processors.auth",
+                             "django.core.context_processors.debug",
+                             "django.core.context_processors.i18n",
+                             "django.core.context_processors.media",
+                             "django.core.context_processors.static",
+                             "django.contrib.messages.context_processors.messages"
+                             )
+
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
@@ -138,7 +152,9 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation
     'django.contrib.admindocs',
-    'ManageResources'
+    'ManageResources',
+    #'paypal.standard.ipn'
+    
 )
 
 # A sample logging configuration. The only tangible logging

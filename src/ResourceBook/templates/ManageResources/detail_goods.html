@@ -7,7 +7,7 @@
     <p>{{ GoodsResource.local_government_id }}</p>
   
   
-  <form action="/ManageResources/place_order_goods/" method="get">
+  <form action="/ManageResources/save_goods_order/" method="get">
   {% csrf_token %}
     <label for="quantity">Quantity :</label>
 	<input type="text" name="Quantity" value=" " id="Quantity">
