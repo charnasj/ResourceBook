@@ -10,31 +10,26 @@ ADMINS = (
     ('Stephane Donnet', 'stephane.donnet@unine.ch'),
     ('Simon Brunner', 'simon.brunner@unine.ch'),
     ('Stephane Costa', 'stephane.costa@unine.ch'),
-<<<<<<< HEAD
+
     ('Abakoura Mahamat','abakoura.mahamat@unine.ch'),
     ('Mazaji Jaleh','mazaji.jaleh@unine.ch'),
     ('Askri safwen','safwen.askri@unine.ch')
-=======
-    ('Abakoura Mahamat', 'abakoura.mahamat@unine.ch'),
-    ('Mazaji Jaleh', 'mazaji.jaleh@unine.ch')
->>>>>>> origin/master
+
 )
 
 MANAGERS = ADMINS
 
-<<<<<<< HEAD
 MANAGERS = ADMINS
 
 
-=======
+
 SESSION_ENGINE = 'django.contrib.sessions.backends.file'
 
 SESSION_FILE_PATH = 'tmp'
->>>>>>> origin/master
 
 DATABASES = {
     'default': {
-<<<<<<< HEAD
+
 
 
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
@@ -51,16 +46,10 @@ DATABASES = {
         
 
 
-=======
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle                   # Or path to database file if using sqli
-        'NAME': 'sqlite3.db', # Or path to database file if using sql
-        'USER': '', # Not used with sqlite3.
-        'PASSWORD': '', # Not used with sqlite3.
-        'HOST': '', # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',
-    }
-}
->>>>>>> origin/master
+
+       
+
+
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -190,11 +179,9 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation
     'django.contrib.admindocs',
-<<<<<<< HEAD
     'ManageResources'
-=======
-    'ManageResources',
->>>>>>> origin/master
+    
+
     
 )
 

@@ -59,12 +59,12 @@ urlpatterns = patterns('',
 	url(r'^view_available_gymhall/$', availabilityGymHallViews.View_available_gymhall, name='View_available_gymhall'),
 	url(r'^add_resources_gymhall/save_resource_gymhall/$', addgymhall.Add_resource_gymhall_save, name='Add_resource_gymhall_save'),
 	url(r'^add_resources_gymhall/$', addgymhall.Add_resource_gymhall_form, name='Add_resource_gymhall_form'),
-<<<<<<< HEAD
-    url(r'^place_order_goods/$', PlaceGoodsOrder.Place_order_goods_save, name='Place_order_goods_save')
 
-=======
+    url(r'^place_order_goods/$', PlaceGoodsOrder.Place_order_goods_save, name='Place_order_goods_save'),
+
+
     
     url(r'^place_goods_order/$', PlaceGoodsOrder.Place_order_goods_form, name='Place_order_goods_form'),
     url(r'^save_goods_order/$', PlaceGoodsOrder.Place_order_goods_save, name='Place_order_goods_save')
->>>>>>> origin/master
+
 )
