@@ -11,10 +11,10 @@ from django.template import RequestContext
 import datetime
 
 def placeGoodsOrder(request):
-    return HttpResponse("A new Order has been saved!")
+    return HttpResponse("A new Order has been saved!",context_instance=RequestContext(request))
 
 def Place_order_goods_form(request):
-    return render_to_response('ManageResources/place_goods_order_form.html')
+    return render_to_response('ManageResources/place_goods_order_form.html', context_instance=RequestContext(request))
 
 def Place_order_goods_save(request):
     quantity = 0
@@ -45,5 +45,5 @@ def Place_order_goods_save(request):
     orderItem   = OrderItem(order_id = order,resource_id = resource)        #TODO add ,invoice_line_id = invoiceLine.id)
     orderItem.save()
     
-    return HttpResponse("Order Saved")
+    return HttpResponse("Order Saved",context_instance=RequestContext(request))
     

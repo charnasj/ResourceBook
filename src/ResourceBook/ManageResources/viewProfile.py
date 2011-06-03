@@ -32,7 +32,7 @@ def View_Profile(request):
     
         
     dict = {'order':queryset_order, 'user':queryset_user, 'customer':queryset_customer , 'order_item':queryset_order_item}
-    return render_to_response('ManageResources/view_profile.html' , {'data':dict})
+    return render_to_response('ManageResources/view_profile.html' , {'data':dict}, context_instance=RequestContext(request))
     
 def index(request):
-    return render_to_response('ManageResources/index.html')
+    return render_to_response('ManageResources/index.html', context_instance=RequestContext(request))

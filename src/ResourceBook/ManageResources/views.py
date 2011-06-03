@@ -57,17 +57,17 @@ def Rent_details(request, id):
 
 
 def Add_resources_goods_form(request):
-    return render_to_response('ManageResources/add_resources_goods.html')
+    return render_to_response('ManageResources/add_resources_goods.html', context_instance=RequestContext(request))
 
 def Add_resource_gymhall_form(request):
-    return render_to_response('ManageResources/add_resource_gymhall.html')
+    return render_to_response('ManageResources/add_resource_gymhall.html', context_instance=RequestContext(request))
 
 def View_available_goods(request):
-    return render_to_response('ManageResources/view_available_goods.html')
+    return render_to_response('ManageResources/view_available_goods.html', context_instance=RequestContext(request))
 
 def View_Profile(request):
-    return render_to_response('ManageResources/view_profile.html')
+    return render_to_response('ManageResources/view_profile.html', context_instance=RequestContext(request))
 
 def View_available_gymhall(request):
-    return render_to_response('ManageResources/view_available_gymhall.html')
+    return render_to_response('ManageResources/view_available_gymhall.html', context_instance=RequestContext(request))
 
