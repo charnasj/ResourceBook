@@ -157,7 +157,11 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation
     'django.contrib.admindocs',
     'ManageResources'
+    
 )
+
+PAYPAL_RECEIVER_EMAIL = "jaleh.mazaji@gmail.com"
+SITE_DOMAIN = "http://localhost:8000"
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

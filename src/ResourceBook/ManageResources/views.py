@@ -9,6 +9,7 @@ from models import *
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render_to_response
 
+
 def LocalGovernment_list(request):
     """Show all notes"""
  
