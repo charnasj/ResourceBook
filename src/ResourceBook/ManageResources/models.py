@@ -76,7 +76,8 @@ class Order (models.Model):
     
     #2. Construct Invoice lines according to order item
     
-    #3. compute final calues an store in new Invoice
+    #3. compute final values an store in new Invoice
+    
      print "Before save"
     
 class OrderItem (models.Model):
