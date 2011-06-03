@@ -69,6 +69,16 @@ class Order (models.Model):
     customer_id = models.ForeignKey(Customer)
     invoice_id = models.ForeignKey(Invoice)
 
+    def _post_save(self):
+    #TODO save invoice and invoice lines
+    
+    #1. load Order and order item
+    
+    #2. Construct Invoice lines according to order item
+    
+    #3. compute final calues an store in new Invoice
+     print "Before save"
+    
 class OrderItem (models.Model):
     name = models.CharField(max_length=70)
     description = models.CharField(max_length=70) 
@@ -76,6 +86,7 @@ class OrderItem (models.Model):
     order_id = models.ForeignKey(Order)
     resource_id = models.ForeignKey(Resource)
     invoice_line_id = models.ForeignKey(InvoiceLine)
+
 
 class GoodsResource (Resource):
     remaining_quantity = models.PositiveIntegerField()
