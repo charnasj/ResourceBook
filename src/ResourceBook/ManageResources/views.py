@@ -34,8 +34,41 @@ def Order_list(request):
                        )
 
 def index(request):
-    return render_to_response('ManageResources/index.html')
+    queryset_rent=RentResource.objects.all()
+    queryset_goods = GoodsResource.objects.all()
+    return render_to_response('ManageResources/index.html', {'rent':queryset_rent , 'goods':queryset_goods})
+
+def Goods_details(request, id):
+    
+    return object_detail(request,
+        queryset=GoodsResource.objects.all(),
+        object_id=id,
+        template_name='ManageResources/detail_goods.html',
+        template_object_name='GoodsResource'
+    )
+    
+def Rent_details(request, id):
+    
+    return object_detail(request,
+        queryset=RentResource.objects.all(),
+        object_id=id,
+        template_name='ManageResources/detail_rent.html',
+        template_object_name='RentResource'
+    )
+
 
 def Add_resources_goods_form(request):
     return render_to_response('ManageResources/add_resources_goods.html')
+
+def Add_resource_gymhall_form(request):
+    return render_to_response('ManageResources/add_resource_gymhall.html')
+
+def View_available_goods(request):
+    return render_to_response('ManageResources/view_available_goods.html')
+
+def View_Profile(request):
+    return render_to_response('ManageResources/view_profile.html')
+
+def View_available_gymhall(request):
+    return render_to_response('ManageResources/view_available_gymhall.html')
 

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Profile</h1>
+
+    {% if user %}
+    <ul>
+    <li> Name : {{user.name }} shipping address : {{customer.shipping_address}}</li>
+    {% for o in order %}
+        <li> Order date : {{o.order_date }} Status : {{o.status}}</li>
+    {% endfor %}
+    </ul>
+    {% else %}
+    You don't have a profile
+    {% endif %}
+{% endblock %}

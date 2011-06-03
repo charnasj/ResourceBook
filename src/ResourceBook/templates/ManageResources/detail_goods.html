@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{{ GoodsResource.name }}</h2>
+    <p>{{ GoodsResource.description }}</p>
+    <p>{{ GoodsResource.unit_price }}</p>
+    <p>{{ GoodsResource.local_government_id }}</p>
+  
+  
+  <form action="Place_order_goods_form/" method="get">
+  {% csrf_token %}
+    <label for="quantity">Quantity :</label>
+	<input type="text" name="Quantity" value=" " id="Quantity">
+	<input type="hidden" name="Name" value=GoodsResource.name id="Name">
+    <br>
+    <input type="submit" value="Order">
+  </form>
+
+{% endblock %}

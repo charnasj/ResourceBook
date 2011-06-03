@@ -4,7 +4,6 @@ from django.shortcuts import render_to_response
 from django.contrib.auth.models import User
 
 
-
 def Reg_newuser_save(request):
     #registration_mail_content = "Weclome to the ResourceBook Django platform!\nThis is an email to confirm that you have registered as a new user.\n if this wasn't you, please contact the administrator ASAP."
     #from_email = "egov-django@unine.ch"
@@ -28,9 +27,11 @@ def Reg_newuser_save(request):
                      is_superuser=False)
     auth_user.set_password(password)
     auth_user.save()
-    new_user = ResourceBookUser(address=address,phone=phone,user=auth_user)
+#    new_user = ResourceBookUser(address=address,phone=phone,user=auth_user)
     #new_user.user.email_user("Welcome to ResourceBook!", registration_mail_content, from_email)
-    new_user.save()
+#    new_user.save()
+    new_customer = Customer(address=address,phone=phone,user=auth_user, shipping_address = address)
+    new_customer.save()
     
     return HttpResponse("A new ResourceBookUser has been saved!")
 

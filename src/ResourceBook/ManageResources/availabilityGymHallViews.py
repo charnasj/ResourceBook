@@ -10,32 +10,10 @@ from django.shortcuts import render_to_response
 from ResourceBook.ManageResources.models import RentResource
 from ResourceBook.ManageResources.models import Resource
 
-#def LocalGovernment_list(request):
-#    """Show all notes"""
-# 
-#    return object_list(request, 
-#        queryset=LocalGovernment.objects.all(),
-#        template_name='ManageResources/list.html',
-#        template_object_name='LocalGovernment'
-#    )
-#    
-#def LocalGovernment_detail(request, id, message):
-#    
-#    return object_detail(request,
-#        queryset=LocalGovernment.objects.all(),
-#        object_id=id,
-#        object_message=message,
-#        template_name='ManageResources/detail.html',
-#        template_object_name='LocalGovernment'
-#    )
-#
 
 def View_available_gymhall(request):
-    for gymhall in Resource.objects.all():
-        print(gymhall.id)
-
-        queryset=RentResource.objects.all()
-        return render_to_response('ManageResources/view_available_gymhall.html' , {'gymhall':queryset})
+    queryset=RentResource.objects.all()
+    return render_to_response('ManageResources/view_available_gymhall.html' , {'gymhall':queryset})
 
     
 def View_available_gymhall_detail(request, id):
@@ -46,3 +24,6 @@ def View_available_gymhall_detail(request, id):
         template_name='ViewAvailableGymhall/detail.html',
         template_object_name='ViewAvailableGymhall'
     )
+
+def index(request):
+    return render_to_response('ManageResources/index.html')

@@ -2,6 +2,39 @@
 
 {% block content %}
     <h2>This is an eGovernment platform for resource management</h2>
-    <a href="{% url Add_resources_goods_form %}">Add resource</a>
-
+    <ul>
+    <li><a href="{% url Add_resources_goods_form %}">Add goods resource</a></li>
+    <li><a href="{% url Add_resource_gymhall_form %}">Add gymhall resource</a></li>
+    <li><a href="{% url View_available_goods %}">View goods resource</a></li>
+    <li><a href="{% url View_available_gymhall %}">View gymhall resource</a></li>
+	</ul>
+	<form action="/ManageResources/view_profile/" method="get">
+  	{% csrf_token %}
+  		<label for="id_profile">Id of the user</label>
+		<input type="text" name="id_profile" value="" id="id_profile">
+    	<input type="submit" value="View Profile">
+  	</form>
+	
+<h1>List of available goods</h1>
+    {% if goods %}
+    <ul>
+    {% for g in goods %}
+        <li> <a href="{% url Goods_details g.id%}">{{ g.name }}</a>Remaining quantity : {{g.remaining_quantity}}</li>
+    {% endfor %}
+    </ul>
+    {% else %}
+    You don't have goods resource
+    {% endif %}
+ 
+<h1>List of available Gym halls</h1>
+    {% if rent %}
+    <ul>
+    {% for r in rent %}
+        <li> <a href="{% url Rent_details r.id%}">{{ r.name }}</a>address : {{r.address}}</li>
+    {% endfor %}
+    </ul>
+    {% else %}
+    You don't have gym hall resource
+    {% endif %}
+ 
 {% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="save_place_order_goods" method="get">
+	<fieldset>
+		<label for="name">Name</label><br/>
+		<input type="text" name="name" id="name" class="text ui-widget-content ui-corner-all" />
+		<br/>
+		<label for="description">Description</label><br/>
+		<input type="text" name="description" id="description" value="" class="text ui-widget-content ui-corner-all" />
+		<br/>
+		<label for="unit_price">Unit Price</label><br/>
+		<input type="text" name="unit_price" id="unit_price" value="" class="text ui-widget-content ui-corner-all" />
+	</fieldset>
+</form>
+{% endblock %}

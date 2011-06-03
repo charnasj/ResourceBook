@@ -1,21 +1,21 @@
 # Django settings for ResourceBook project.
-# jaleh
-#it works
 
 import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+
 ADMINS = (
     ('Jonathan Charnas', 'jonathan.charnas@unine.ch'),
     ('Stephane Donnet', 'stephane.donnet@unine.ch'),
-    ('Simon Brunner','simon.brunner@unine.ch'),
+    ('Simon Brunner', 'simon.brunner@unine.ch'),
     ('Stephane Costa', 'stephane.costa@unine.ch'),
-    ('Abakoura Mahamat','abakoura.mahamat@unine.ch'),
-    ('Mazaji Jaleh','mazaji.jaleh@unine.ch')
+    ('Abakoura Mahamat', 'abakoura.mahamat@unine.ch'),
+    ('Mazaji Jaleh', 'mazaji.jaleh@unine.ch')
 )
 
 MANAGERS = ADMINS
+<<<<<<< HEAD
 
 DATABASES = {
     'default': {
@@ -26,9 +26,24 @@ DATABASES = {
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
       
         'PORT': '',  
+=======
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.file'
+
+SESSION_FILE_PATH = 'tmp'
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle                   # Or path to database file if using sqli
+        'NAME': 'sqlite3.db', # Or path to database file if using sql
+        'USER': '', # Not used with sqlite3.
+        'PASSWORD': '', # Not used with sqlite3.
+        'HOST': '', # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',
+
+>>>>>>> origin/master
     }
-} 
-           
+}
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -54,23 +69,31 @@ USE_I18N = True
 USE_L10N = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
+
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = ''
+
+# Example: "/home/media/media.lawrence.com/media/
+MEDIA_ROOT = 'templates/media'
+
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = ''
+MEDIA_URL = 'http://localhost:8000/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
+
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = ''
+# Example: "/home/media/media.lawrence.com/static/"
+
+STATIC_ROOT = 'templates/static'
+
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = '/static/'
+STATIC_URL = 'http://localhost:8000/static/'
 
 # URL prefix for admin static files -- CSS, JavaScript and images.
 # Make sure to use a trailing slash.
@@ -82,13 +105,14 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    STATIC_ROOT,
 )
 
 # List of finder classes that know how to find static files in
 # various locations.
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+#    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
@@ -113,6 +137,15 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'ResourceBook.urls'
 
 PROJECT_ROOT = os.path.realpath(os.path.dirname(__file__))
+
+TEMPLATE_CONTEXT_PROCESSORS = ("django.core.context_processors.request",
+                             "django.contrib.auth.context_processors.auth",
+                             "django.core.context_processors.debug",
+                             "django.core.context_processors.i18n",
+                             "django.core.context_processors.media",
+                             "django.core.context_processors.static",
+                             "django.contrib.messages.context_processors.messages"
+                             )
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".

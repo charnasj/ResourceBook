@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>List of orders</h1>
+  
+  {% if orders %}
+  <center>
+    <table width=100% border=1 align=center bordercolor=black>
+    	<tr>
+    		<th>Name</th>
+    		<th>Description</th>
+    		<th>Unit Price</th>
+    		<th>Order ID</th>
+    		<th>Resource ID</th>
+    	</tr>
+    	 {% for o in orders %}
+    	 	<tr>
+    	 		<td align=center>{{ o.name }}</td>
+    	 		<td align=center>{{ o.description }}</td>
+    	 		<td align=center>{{ o.unit_price }}</td>
+    	 		<td align=center>{{ o.order_id_id }}</td>
+    	 		<td align=center>{{ o.resource_id_id }}</td>
+    	 	</tr>
+    	 {% endfor %}
+    
+    </table>
+    </center>
+    {% else %}
+    There are no active orders
+    {% endif %}  
+  
+{% endblock %}
