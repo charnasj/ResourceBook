@@ -10,7 +10,7 @@
   <form action="/ManageResources/save_goods_order/" method="get">
   {% csrf_token %}
     <label for="quantity">Quantity :</label>
-	<input type="text" name="Quantity" value=" " id="Quantity">
+	<input type="text" name="quantity" value=" " id="quantity">
 	<input type="hidden" name="id" value="{{GoodsResource.id}}" id="id">
     <br>
     <input type="submit" value="Order">
