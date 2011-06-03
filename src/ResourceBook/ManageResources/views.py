@@ -8,6 +8,7 @@ from django.core.urlresolvers import reverse
 from models import *
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render_to_response
+from django.template import RequestContext
 
 
 def LocalGovernment_list(request):
@@ -30,14 +31,12 @@ def LocalGovernment_detail(request, id):
 
     
 def Order_list(request):
-    
-    return object_list(request, queryset=Resource.objects.all(), template_name='ManageResources/orderDetail.html', template_object_name='LocalGovernment'
-                       )
+    return object_list(request, queryset=Resource.objects.all(), template_name='ManageResources/orderDetail.html', template_object_name='LocalGovernment')
 
 def index(request):
     queryset_rent=RentResource.objects.all()
     queryset_goods = GoodsResource.objects.all()
-    return render_to_response('ManageResources/index.html', {'rent':queryset_rent , 'goods':queryset_goods})
+    return render_to_response('ManageResources/index.html', {'rent':queryset_rent , 'goods':queryset_goods}, context_instance=RequestContext(request))
 
 def Goods_details(request, id):
     

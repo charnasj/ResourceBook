@@ -44,7 +44,9 @@
 								<li>                  <a href="/ManageResources/new_user/" shape="rect">Inscription</a>                </li> 
 
 								<!--<li>                  <a href="#" shape="rect">Link</a>                </li>-->               
-								<li>                  <a href="#" shape="rect">Contact us</a>          </li>              
+								<li>                  <a href="#" shape="rect">Contact us</a>          </li>
+								<li> {% if request.session.user_id %} <a href="/ManageResources/logout">Logout</a> {% else %} <a href="/ManageResources/login">Login</a> {% endif %}</li> 
+								<li> {% if request.session.customer_id %} <a href="/ManageResources/logout">Profile</a> {% else %} {% endif %}</li>              
 							</ul>             
 						</div>
 						              

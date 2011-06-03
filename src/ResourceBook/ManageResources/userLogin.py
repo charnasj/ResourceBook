@@ -1,15 +1,25 @@
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse
-from django.shortcuts import render_to_response    
-
+from django.shortcuts import render_to_response
+from models import *
+from django.template import RequestContext
 def login_view(request):
     username = request.GET['username']
     password = request.GET['password']
+    if request.session.__contains__('user_id'):
+        del request.session['user_id']
     user = authenticate(username=username, password=password)
     if user is not None:
         if user.is_active:
             login(request, user)
-            return render_to_response('ManageResources/login_succeed.html')
+            request.session['user_id'] = user.id
+            print request.session['user_id']
+            request.session['first_name'] = user.first_name
+            if user.is_staff == 0 and not request.session.__contains__('customer_id'):
+                request.session['customer_id'] = ResourceBookUser.objects.get(user = user.id).id 
+                #print "customer_id = " +  request.session['customer_id'] 
+            print request.session['user_id']
+            return render_to_response('ManageResources/login_succeed.html', context_instance=RequestContext(request))
         else:
             return HttpResponse("Your account has been disabled!")
     else:
@@ -18,6 +28,9 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     response = HttpResponse("Successfully logged out. See you again soon!")
+    del request.session['user_id']
+    if request.session['customer_id'] is not None:
+        del request.session['customer_id']
     return response
 
 def login_form(request):
