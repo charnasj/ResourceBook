@@ -65,6 +65,14 @@ class InvoiceLine (models.Model):
     vat_id  = models.ForeignKey(VAT,null=True)
     #invoice_id = models.ForeignKey(Invoice)
     
+    def save(self, *args, **kwargs):
+        vat             = VAT.objects.get( id=self.vat_id.id )
+        self.total      = long(self.units) * long(self.amount)
+        self.totalExcl  = self.total
+        vatTotal        = long(float(vat.ratio) * float(self.totalExcl))
+        self.totalIncl  = long(self.totalExcl) + long(vatTotal)
+        super(InvoiceLine, self).save(*args, **kwargs) # Call the "real" save() method.
+        
 class Order (models.Model):
     order_date = models.DateTimeField()
     status = models.CharField(max_length=70)
@@ -80,7 +88,7 @@ class OrderItem (models.Model):
     #invoice_line_id = models.ForeignKey(InvoiceLine)
     
     def save(self, *args, **kwargs):
-        targetResource  = Resource.objects.get( id=self.resource_id.id )
+        targetResource       = Resource.objects.get( id=self.resource_id.id )
         self.name            = targetResource.name
         self.description     = targetResource.description
         self.unit_price      = targetResource.unit_price

@@ -23,12 +23,12 @@ def Place_order_goods_save(request):
         resourceId= request.GET['id']
     if 'quantity' in request.GET and request.GET['quantity']:
         quantity= request.GET['quantity']
-        
+    print "quantity"
+    print quantity
     #0. get the current customer
     customer    = Customer.objects.get(id=request.session.get('customer_id'))
     #1. get the target resource
     resource    = Resource.objects.get(id=resourceId)
-    print resource.name
     #2. create the invoice
     invoice     = Invoice(invoiceDate = datetime.datetime.now())
     invoice.save()
@@ -44,6 +44,14 @@ def Place_order_goods_save(request):
     #5. create order item
     orderItem   = OrderItem(order_id = order,resource_id = resource)        #TODO add ,invoice_line_id = invoiceLine.id)
     orderItem.save()
+    
+    #6. update invoice total
+    invoice.total       = invoiceLine.total
+    invoice.totalExcl   = invoiceLine.totalExcl
+    invoice.totalIncl   = invoiceLine.totalIncl
+    invoice.totalVat    = invoiceLine.totalIncl - invoiceLine.totalExcl
+    invoice.round       = 0
+    invoice.save()
     
     return HttpResponse("Order Saved")
     
