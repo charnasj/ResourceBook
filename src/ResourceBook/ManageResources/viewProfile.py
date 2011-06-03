@@ -16,7 +16,6 @@ from ResourceBook.ManageResources.models import OrderItem
 from django.contrib.auth.models import User
 
 def View_Profile(request):
-    print("<==============================================================>")
     if 'id_profile' in request.GET and request.GET['id_profile']:
         get_id = request.GET['id_profile']
     print("ID : " + get_id)
