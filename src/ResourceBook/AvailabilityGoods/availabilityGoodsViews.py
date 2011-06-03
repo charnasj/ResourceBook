@@ -35,9 +35,16 @@ def View_available_goods(request):
     )  
     
 def View_available_goods_detail(request, id):
-    return object_detail(request,
-        queryset=GoodsResource.objects.all(),
-        object_id=id,
-        template_name='ViewAvailableGoods/detail.html',
-        template_object_name='ViewAvailableGoods'
-    )
+    goods = GoodsResource.objects.get(pk=1)
+    print('TEST')
+    print(goods.name)
+    for goods in GoodsResource.objects.all():
+        print(goods.name)
+
+    return object_list(request,
+                        queryset=GoodsResource.objects.all(),
+                        template_name='ViewAvailableGoods/view_available_goods.html',
+                        template_object_name='GoodsResource')  
+
+
+    
