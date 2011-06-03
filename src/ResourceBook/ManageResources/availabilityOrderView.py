@@ -14,6 +14,7 @@ from ResourceBook.ManageResources.models import Order
 from ResourceBook.ManageResources.models import Customer
 from ResourceBook.ManageResources.models import GoodsOrderItem
 from ResourceBook.ManageResources.models import RentsOrderItem
+from django.template import RequestContext
 
 
 def View_available_orders(request):

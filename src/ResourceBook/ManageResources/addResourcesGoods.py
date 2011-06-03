@@ -8,6 +8,7 @@ from django.core.urlresolvers import reverse
 from models import *
 from django.http import HttpRequest, HttpResponse, HttpResponseNotFound
 from django.shortcuts import render_to_response
+from django.template import RequestContext
 
 
 

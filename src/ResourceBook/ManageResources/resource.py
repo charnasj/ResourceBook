@@ -6,6 +6,7 @@ from django.core.urlresolvers  import reverse
 from django.conf import settings
 #from paypal.standard.forms import PayPalPaymentsForm
 from ManageResources.models import Resource
+from django.template import RequestContext
 
 def Resource_detai (request):
     

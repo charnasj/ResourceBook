@@ -14,11 +14,12 @@ from ResourceBook.ManageResources.models import GoodsResource
 from ResourceBook.ManageResources.models import Resource
 from ResourceBook.ManageResources.models import OrderItem
 from django.contrib.auth.models import User
+from django.template import RequestContext
 
 def View_Profile(request):
-    if 'id_profile' in request.GET and request.GET['id_profile']:
-        get_id = request.GET['id_profile']
-    print("ID : " + get_id)
+    get_id = request.session.get('customer_id')
+    print( request.session.get('user_id') )
+ #   print("ID : " + get_id)
     
     
     if not Customer.objects.filter(pk = get_id).exists():
