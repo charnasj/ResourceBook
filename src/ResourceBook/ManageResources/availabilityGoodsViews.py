@@ -9,6 +9,7 @@ from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render_to_response
 from ResourceBook.ManageResources.models import GoodsResource
 from ResourceBook.ManageResources.models import Resource
+from django.template import RequestContext
 
 def View_available_goods(request):
     queryset=GoodsResource.objects.all()
