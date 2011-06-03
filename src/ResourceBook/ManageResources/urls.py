@@ -12,7 +12,7 @@ import PlaceGoodsOrder
 
 from django.conf import settings
 
-import availabilityGoodsView
+import availabilityGoodsViews
 import viewProfile
 import availabilityGymHallViews
 import resource
