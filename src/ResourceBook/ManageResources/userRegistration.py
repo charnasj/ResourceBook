@@ -4,7 +4,6 @@ from django.shortcuts import render_to_response
 from django.contrib.auth.models import User
 
 
-
 def Reg_newuser_save(request):
     #registration_mail_content = "Weclome to the ResourceBook Django platform!\nThis is an email to confirm that you have registered as a new user.\n if this wasn't you, please contact the administrator ASAP."
     #from_email = "egov-django@unine.ch"

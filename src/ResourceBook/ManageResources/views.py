@@ -39,3 +39,9 @@ def index(request):
 def Add_resources_goods_form(request):
     return render_to_response('ManageResources/add_resources_goods.html')
 
+def Add_resource_gymhall_form(request):
+    return render_to_response('ManageResources/add_resource_gymhall.html')
+
+def View_available_goods(request):
+    return render_to_response('ManageResources/view_available_goods.html')
+
