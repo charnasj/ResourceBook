@@ -27,10 +27,9 @@ SESSION_ENGINE = 'django.contrib.sessions.backends.file'
 
 SESSION_FILE_PATH = 'tmp'
 
+
 DATABASES = {
     'default': {
-
-
 
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'sqlite3.db',                      # Or path to database file if using sqlite
@@ -40,6 +39,7 @@ DATABASES = {
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',  
           }}                  # Set to empty string for default. Not used with sqlite3.
+
 
 
 
@@ -72,7 +72,7 @@ USE_L10N = True
 
 # Example: "/home/media/media.lawrence.com/media/"
 
-MEDIA_ROOT = 'C:/Users/unine/Desktop/eclipse/workshopjango/ResourceBook/src/ResourceBook/templates/media'
+MEDIA_ROOT = 'templates/media'
 
 
 # Example: "/home/media/media.lawrence.com/media/
@@ -83,7 +83,7 @@ MEDIA_ROOT = 'C:/Users/unine/Desktop/eclipse/workshopjango/ResourceBook/src/Reso
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = 'C:/Users/unine/Desktop/eclipse/workshopjango/ResourceBook/src/ResourceBook/templates/media'
+MEDIA_URL = 'templates/media'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
@@ -91,7 +91,7 @@ MEDIA_URL = 'C:/Users/unine/Desktop/eclipse/workshopjango/ResourceBook/src/Resou
 
 # Example: "/home/media/media.lawrence.com/static/"
 
-STATIC_ROOT = 'C:/Users/unine/Desktop/eclipse/workshopjango/ResourceBook/src/ResourceBook/ManageResources/static'
+STATIC_ROOT = 'ManageResources/static'
 
 # Example: "/home/media/media.lawrence.com/static/"
 
@@ -106,7 +106,7 @@ STATIC_URL = 'http://localhost:8000/static/'
 # URL prefix for admin static files -- CSS, JavaScript and images.
 # Make sure to use a trailing slash.
 # Examples: "http://foo.com/static/admin/", "/static/admin/".
-ADMIN_MEDIA_PREFIX = 'C:/Users/unine/Desktop/eclipse/workshopjango/ResourceBook/src/ResourceBook/ManageResources/static/admin/'
+ADMIN_MEDIA_PREFIX = 'ManageResources/static/admin/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
