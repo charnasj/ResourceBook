@@ -12,17 +12,11 @@ from django.shortcuts import render_to_response
 
 
 def Add_resources_goods_form(request):
-<<<<<<< HEAD
-    return render_to_response('ManageResources/add_resources_goods.html', context_instance=RequestContext(request))
-
-def index(request):
-    return render_to_response('ManageResources/index.html', context_instance=RequestContext(request))
-=======
     return render_to_response('ManageResources/add_resources_goods.html',context_instance=RequestContext(request))
 
 def index(request):
     return render_to_response('ManageResources/index.html',context_instance=RequestContext(request))
->>>>>>> origin/master
+
 
 def Add_resources_goods_save(request):
     if 'name' in request.GET and request.GET['name']:

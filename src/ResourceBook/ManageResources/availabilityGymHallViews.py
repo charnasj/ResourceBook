@@ -29,8 +29,5 @@ def View_available_gymhall_detail(request, id):
     )
 
 def index(request):
-<<<<<<< HEAD
-    return render_to_response('ManageResources/index.html', context_instance=RequestContext(request))
-=======
     return render_to_response('ManageResources/index.html',context_instance=RequestContext(request))
->>>>>>> origin/master
+

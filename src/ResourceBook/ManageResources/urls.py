@@ -12,8 +12,7 @@ import PlaceGoodsOrder
 
 from django.conf import settings
 
-import availabilityGoodsViews
-import pdf
+import availabilityGoodsView
 import viewProfile
 import availabilityGymHallViews
 import resource
@@ -44,7 +43,6 @@ urlpatterns = patterns('',
     url(r'^login/$', userLogin.login_form, name='Login'),
     url(r'^login_succeed/$', userLogin.login_view, name='Login Succeed'),
     url(r'^logout', userLogin.logout_view, name='Logout'),
-    url(r'^pdf', pdf.pdf_view, name='pdf'),
     url(r'^resource', resource.Resource_detai, name='Resource_detail'),
 
 

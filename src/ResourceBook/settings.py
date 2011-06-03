@@ -33,7 +33,7 @@ DATABASES = {
 
 
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'C:/Users/unine/Desktop/eclipse/workshopjango/ResourceBook/src/sqlite3.db',                      # Or path to database file if using sqlite
+        'NAME': 'sqlite3.db',                      # Or path to database file if using sqlite
 
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
