@@ -15,6 +15,10 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+SESSION_ENGINE = 'django.contrib.sessions.backends.file'
+
+SESSION_FILE_PATH = 'tmp'
+
 DATABASES = {
     'default': {
 
