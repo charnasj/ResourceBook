@@ -6,7 +6,7 @@ from django.views.generic.create_update import delete_object
 from django.core.urlresolvers import reverse
  
 from models import *
-from django.http import HttpRequest, HttpResponse
+from django.http import HttpRequest, HttpResponse, HttpResponseNotFound
 from django.shortcuts import render_to_response
 #import userRegistration
 
@@ -17,7 +17,11 @@ def Add_resource_gymhall_save(request):
     	client_id= ResourceBookUser.objects.get(pk=client_id)
     if 'Localgorvernment_ID' in request.GET and request.GET['Localgorvernment_ID']:
     	Localgorvernment_ID= request.GET['Localgorvernment_ID']
-    	Localgorvernment_ID= LocalGovernment.objects.get(name=Localgorvernment_ID)
+        
+        if not LocalGovernment.objects.filter(pk = Localgorvernment_ID).exists():
+            return HttpResponseNotFound('<h1><FONT COLOR="red" >Local Government ID doesn\'t exist</FONT></h1>')
+        
+        Localgorvernment_ID= LocalGovernment.objects.get(pk=Localgorvernment_ID)        
     if 'name' in request.GET and request.GET['name']:
     	name= request.GET['name']
     if 'description' in request.GET and request.GET['description']:
@@ -32,6 +36,10 @@ def Add_resource_gymhall_save(request):
         finishdate= request.GET['finishdate']
     if 'vat_id' in request.GET and request.GET['vat_id']:
         vatId = request.GET['vat_id']
+        
+        if not VAT.objects.filter(pk = vatId).exists():
+            return HttpResponseNotFound('<h1><FONT COLOR="red" >VAT ID doesn\'t exist</FONT></h1>')
+        
         vat = VAT.objects.get(pk=vatId)
     add_gymHall = RentResource(name=name, description=description,unit_price= unit_price, local_government_id = Localgorvernment_ID,vat_id = vat, address=address)
     #add_gymHall_dates = RentReservation(start=startdate, finish=finishdate,rent_resource_id=1,customer_id=1,order_item_id=1)

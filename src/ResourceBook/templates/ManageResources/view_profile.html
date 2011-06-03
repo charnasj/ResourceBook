@@ -1,16 +1,46 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Profile</h1>
-
-    {% if user %}
-    <ul>
-    <li> Name : {{user.name }} shipping address : {{customer.shipping_address}}</li>
-    {% for o in order %}
-        <li> Order date : {{o.order_date }} Status : {{o.status}}</li>
-    {% endfor %}
-    </ul>
-    {% else %}
-    You don't have a profile
-    {% endif %}
+	<h1>Profile</h1>
+	<a href="{% url index %}">Return to index</a><br><br>
+	{% for key, value in data.items %}
+		{% if key == "user" %}
+			First Name : {{value.first_name}}<br>	Last Name : {{value.last_name}}<br>		Email : {{value.email}}<br>
+			UserName : {{value.username}}<br>
+		{% endif %}
+	{% endfor %}
+	{% for key, value in data.items %}
+		{% if key == "customer" %}
+			Shipping Address : {{value.shipping_address}}<br>
+		{% endif%}
+	{% endfor %}
+	
+	<br><br><br>
+	
+	<TABLE BORDER>
+	<TR><TH>Date</TH><TH>Status</TH><TH>Item</TH><TH>Description</TH></TR>
+	{% for key, value in data.items %}
+		{% if key == "order" %}
+			{% for o in value %}				
+				{% for key2, value2 in data.items %}
+					{% if key2 == "customer" %}
+						{% if value2.resourcebookuser_ptr_id == o.customer_id_id %}
+							<TR><TD>{{o.order_date}}</TD><TD>{{o.status}}</TD>
+						{% endif %}
+						{% for key_item, value_item in data.items %}
+							{% if key_item == "order_item" %}
+								{% for oi in  value_item %}
+									{% if o.id == oi.order_id_id and value2.resourcebookuser_ptr_id == o.customer_id_id%}
+									 	<TD>{{oi.name}}</TD><TD>{{oi.description}}</TD>
+									{% endif %}
+								{% endfor %}
+							{% endif %}
+						{% endfor %}
+						</TR>
+					{% endif %}
+				{% endfor %}
+			{% endfor %}
+		{% endif%}
+	{% endfor %}
+	</TABLE>
 {% endblock %}
