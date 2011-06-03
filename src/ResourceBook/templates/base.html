@@ -37,7 +37,8 @@
 								<li id="current" style="border:none"> <a href="/ManageResources/" shape="rect">Home</a>  </li>                              
 								<li>                  <a href="/ManageResources/new_user/" shape="rect">Inscription</a>                </li> 
 								<!--<li>                  <a href="#" shape="rect">Link</a>                </li>-->               
-								<li>                  <a href="#" shape="rect">Contact us</a>          </li>              
+								<li>                  <a href="#" shape="rect">Contact us</a>          </li>
+								<li> {% if first_name %} <a href="/ManageResources/logout">Logout, {{ request.session.first_name }}</a> {% else %} <a href="/ManageResources/login">Login</a> {% endif %}</li>              
 							</ul>             
 						</div>
 						              

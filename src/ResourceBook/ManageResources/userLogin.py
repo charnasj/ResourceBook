@@ -13,6 +13,7 @@ def login_view(request):
         if user.is_active:
             login(request, user)
             request.session['user_id'] = user.id
+            request.session['first_name'] = user.first_name
             if user.is_staff == 0 and not request.session.__contains__('customer_id'):
                 request.session['customer_id'] = ResourceBookUser.objects.get(user = user.id).id 
                 print request.session['customer_id'] 
