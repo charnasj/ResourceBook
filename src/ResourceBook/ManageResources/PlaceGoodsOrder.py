@@ -23,8 +23,7 @@ def Place_order_goods_save(request):
         resourceId= request.GET['id']
     if 'quantity' in request.GET and request.GET['quantity']:
         quantity= request.GET['quantity']
-    print "quantity"
-    print quantity
+    
     #0. get the current customer
     customer    = Customer.objects.get(id=request.session.get('customer_id'))
     #1. get the target resource
@@ -53,5 +52,11 @@ def Place_order_goods_save(request):
     invoice.round       = 0
     invoice.save()
     
-    return HttpResponse("Order Saved")
+    #now will return the paypayl url
+    pp = paypal.PayPal()
+    token = pp.SetExpressCheckout(invoice.totalIncl)
+    paypal_url = pp.PAYPAL_URL + token
+    payload = {'paypal_url':paypal_url}
+    
+    return HttpResponse('paypal_order.html', payload, RequestContext(request))
     
