@@ -56,6 +56,29 @@ def Rent_details(request, id):
         template_object_name='RentResource'
     )
 
+def Place_gym_order(request, id):
+    now = datetime.datetime.now()
+    print(now)
+    JSON_time = 'Wed Apr 21 19:29:07 +0000 2010'
+    my_time = datetime.datetime.strptime(JSON_time, '%a %b %d %H:%M:%S +0000 %Y')
+    m_t="03/06/11"
+#    'YYYY-MM-DD HH:MM[:ss[.uuuuuu]]'
+    mahamat_time = datetime.datetime.strptime(m_t, "%d/%m/%y")
+    print(now.strftime("%d/%m/%y"))
+    print(mahamat_time)
+    print("AAAAAAAAAAAAAAAA")
+    print(my_time)
+#    name = models.CharField(max_length=70)
+#    description = models.CharField(max_length=70) 
+#    unit_price = models.DecimalField(decimal_places=2,max_digits=10)
+#    order_id = models.ForeignKey(Order)
+#    resource_id = models.ForeignKey(Resource)
+#    invoice_line_id = models.ForeignKey(InvoiceLine)
+    new_RentsOrderItem = RentsOrderItem(name="New Rents Order", description = "Some description", start = mahamat_time
+                                        ,unit_price=30, order_id_id=1, resource_id_id=1, invoice_line_id_id=1)
+    new_RentsOrderItem.save()
+    return HttpResponse("keep it simple")
+
 
 def Add_resources_goods_form(request):
     return render_to_response('ManageResources/add_resources_goods.html', context_instance=RequestContext(request))
