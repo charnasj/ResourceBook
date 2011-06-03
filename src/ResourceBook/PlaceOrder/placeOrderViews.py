@@ -64,4 +64,4 @@ from ResourceBook.ManageResources.models import LocalGovernment
 
     
 def Place_order(request):
-    return render_to_response('PlaceOrder/place_order.html')
+    return render_to_response('PlaceOrder/place_order.html', context_instance=RequestContext(request))

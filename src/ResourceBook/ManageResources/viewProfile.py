@@ -14,13 +14,10 @@ from ResourceBook.ManageResources.models import GoodsResource
 from ResourceBook.ManageResources.models import Resource
 from ResourceBook.ManageResources.models import OrderItem
 from django.contrib.auth.models import User
+from django.template import RequestContext
 
 def View_Profile(request):
-    if 'id_profile' in request.GET and request.GET['id_profile']:
-        get_id = request.GET['id_profile']
-    print("ID : " + get_id)
-    
-    
+    get_id = request.session.get('customer_id')
     if not Customer.objects.filter(pk = get_id).exists():
         return HttpResponseNotFound('<h1>Bad user id</h1>')
     
@@ -32,7 +29,7 @@ def View_Profile(request):
     
         
     dict = {'order':queryset_order, 'user':queryset_user, 'customer':queryset_customer , 'order_item':queryset_order_item}
-    return render_to_response('ManageResources/view_profile.html' , {'data':dict})
+    return render_to_response('ManageResources/view_profile.html' , {'data':dict}, context_instance=RequestContext(request))
     
 def index(request):
-    return render_to_response('ManageResources/index.html')
+    return render_to_response('ManageResources/index.html', context_instance=RequestContext(request))

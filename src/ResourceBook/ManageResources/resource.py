@@ -4,7 +4,7 @@ from django.template import RequestContext
 from django.shortcuts import get_object_or_404
 from django.core.urlresolvers  import reverse
 from django.conf import settings
-from ManageResources.paypal.standard.forms import PayPalPaymentsForm
+#from paypal.standard.forms import PayPalPaymentsForm
 from ManageResources.models import Resource
 
 def Resource_detai (request):

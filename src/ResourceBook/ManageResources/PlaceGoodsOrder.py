@@ -7,14 +7,17 @@ from django.core.urlresolvers import reverse
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render_to_response
 from models import *
+from PayPal import *
 from django.template import RequestContext
 import datetime
 
+
+
 def placeGoodsOrder(request):
-    return HttpResponse("A new Order has been saved!")
+    return HttpResponse("A new Order has been saved!",context_instance=RequestContext(request))
 
 def Place_order_goods_form(request):
-    return render_to_response('ManageResources/place_goods_order_form.html')
+    return render_to_response('ManageResources/place_goods_order_form.html', context_instance=RequestContext(request))
 
 def Place_order_goods_save(request):
     quantity = 0
@@ -53,10 +56,10 @@ def Place_order_goods_save(request):
     invoice.save()
     
     #now will return the paypayl url
-    pp = paypal.PayPal()
-    token = pp.SetExpressCheckout(invoice.totalIncl)
-    paypal_url = pp.PAYPAL_URL + token
-    payload = {'paypal_url':paypal_url}
+    pp              = PayPal()
+    token           = pp.SetExpressCheckout(invoice.totalIncl)
+    paypal_url      = pp.PAYPAL_URL + token
+    payload         = {'paypal_url':paypal_url}
     
     return HttpResponse('paypal_order.html', payload, RequestContext(request))
     
