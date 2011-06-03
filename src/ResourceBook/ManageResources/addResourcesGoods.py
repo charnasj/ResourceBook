@@ -6,16 +6,17 @@ from django.views.generic.create_update import delete_object
 from django.core.urlresolvers import reverse
  
 from models import *
-from django.http import HttpRequest, HttpResponse
+from django.http import HttpRequest, HttpResponse, HttpResponseNotFound
 from django.shortcuts import render_to_response
 
 
 
 def Add_resources_goods_form(request):
-    return render_to_response('ManageResources/add_resources_goods.html')
+    return render_to_response('ManageResources/add_resources_goods.html',context_instance=RequestContext(request))
 
 def index(request):
-    return render_to_response('ManageResources/index.html')
+    return render_to_response('ManageResources/index.html',context_instance=RequestContext(request))
+
 
 def Add_resources_goods_save(request):
     if 'name' in request.GET and request.GET['name']:
@@ -26,9 +27,17 @@ def Add_resources_goods_save(request):
         unitPrice = request.GET['unit_price']
     if 'local_government_id' in request.GET and request.GET['local_government_id']:
         localGovernmentId = request.GET['local_government_id']
-        localGovernmentId = LocalGovernment.objects.get(pk=localGovernmentId)
+
+        if not LocalGovernment.objects.filter(pk = localGovernmentId).exists():
+            return HttpResponseNotFound('<h1><FONT COLOR="red" >Local Government ID doesn\'t exist</FONT></h1>', context_instance=RequestContext(request))
+        
+        localGovernmentId = LocalGovernment.objects.get(pk = localGovernmentId)
     if 'vat_id' in request.GET and request.GET['vat_id']:
         vatId = request.GET['vat_id']
+        
+        if not VAT.objects.filter(pk = vatId).exists():
+            return HttpResponseNotFound('<h1><FONT COLOR="red" >VAT ID doesn\'t exist</FONT></h1>', context_instance=RequestContext(request))
+        
         vatId = VAT.objects.get(pk=vatId)
     if 'quantity' in request.GET and request.GET['quantity']:
         quantity = request.GET['quantity']
@@ -38,4 +47,5 @@ def Add_resources_goods_save(request):
                              remaining_quantity = quantity, unit_type = unitType)
     add_resources.save()
     
-    return render_to_response('ManageResources/add_resources_goods_added.html')
+    return render_to_response('ManageResources/add_resources_goods_added.html',context_instance=RequestContext(request))
+

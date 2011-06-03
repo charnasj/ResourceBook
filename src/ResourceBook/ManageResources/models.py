@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+import datetime
 
 class LocalGovernment (models.Model):
     name = models.CharField(max_length=70)
@@ -37,46 +37,55 @@ class Resource (models.Model):
 
     
 class Invoice (models.Model):
-    total = models.BigIntegerField()
-    totalExcl = models.BigIntegerField()
-    totalVat = models.BigIntegerField()
-    totalIncl = models.BigIntegerField()
-    round = models.BigIntegerField()
-    invoiceDate = models.DateTimeField()
-    paymentDate = models.DateTimeField()
+    total = models.BigIntegerField(null=True)
+    totalExcl = models.BigIntegerField(null=True)
+    totalVat = models.BigIntegerField(null=True)
+    totalIncl = models.BigIntegerField(null=True)
+    round = models.BigIntegerField(null=True)
+    invoiceDate = models.DateTimeField(auto_now=True)
+    paymentDate = models.DateTimeField(null=True)
     PAYMENT_TYPES = (
      (u'PP',u'PayPal' ),
      (u'CC',u'Credit Card')
      )
-    paymentKind = models.CharField(max_length=2, choices=PAYMENT_TYPES)
+    paymentKind = models.CharField(max_length=2, choices=PAYMENT_TYPES,null=True)
     
+
 class InvoiceLine (models.Model):
     name = models.CharField(max_length=70)
     description = models.CharField(max_length=70)
-    dueDate = models.DateTimeField()
-    units = models.IntegerField()
-    amount = models.BigIntegerField()
-    total = models.BigIntegerField()
-    totalExcl = models.BigIntegerField()
-    totalIncl = models.BigIntegerField()
-    periodStart = models.DateTimeField()
-    periodEnd = models.DateTimeField()
-    vat_id = models.ForeignKey(VAT)
-
+    dueDate = models.DateTimeField(auto_now=True)
+    units = models.IntegerField(null=True)
+    amount = models.BigIntegerField(null=True)
+    total = models.BigIntegerField(null=True)
+    totalExcl = models.BigIntegerField(null=True)
+    totalIncl = models.BigIntegerField(null=True)
+    periodStart = models.DateTimeField(auto_now=True)
+    periodEnd = models.DateTimeField(auto_now=True)
+    vat_id  = models.ForeignKey(VAT,null=True)
+    #invoice_id = models.ForeignKey(Invoice)
+    
 class Order (models.Model):
     order_date = models.DateTimeField()
     status = models.CharField(max_length=70)
     customer_id = models.ForeignKey(Customer)
     invoice_id = models.ForeignKey(Invoice)
-
+    
 class OrderItem (models.Model):
     name = models.CharField(max_length=70)
     description = models.CharField(max_length=70) 
     unit_price = models.DecimalField(decimal_places=2,max_digits=10)
     order_id = models.ForeignKey(Order)
     resource_id = models.ForeignKey(Resource)
-    invoice_line_id = models.ForeignKey(InvoiceLine)
-
+    #invoice_line_id = models.ForeignKey(InvoiceLine)
+    
+    def save(self, *args, **kwargs):
+        targetResource  = Resource.objects.get( id=self.resource_id.id )
+        self.name            = targetResource.name
+        self.description     = targetResource.description
+        self.unit_price      = targetResource.unit_price
+        super(OrderItem, self).save(*args, **kwargs) # Call the "real" save() method.
+        
 class GoodsResource (Resource):
     remaining_quantity = models.PositiveIntegerField()
     unit_type = models.CharField(max_length=70) # to display
@@ -93,7 +102,7 @@ class RentReservation (models.Model):
     
 class GoodsOrderItem (OrderItem):
     quantity = models.PositiveIntegerField()
-
+        
 class RentsOrderItem (OrderItem):
     start = models.DateTimeField()
     finish = models.DateTimeField()

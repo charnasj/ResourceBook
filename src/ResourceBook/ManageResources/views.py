@@ -8,6 +8,8 @@ from django.core.urlresolvers import reverse
 from models import *
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render_to_response
+from django.template import RequestContext
+
 
 def LocalGovernment_list(request):
     """Show all notes"""
@@ -29,14 +31,12 @@ def LocalGovernment_detail(request, id):
 
     
 def Order_list(request):
-    
-    return object_list(request, queryset=Resource.objects.all(), template_name='ManageResources/orderDetail.html', template_object_name='LocalGovernment'
-                       )
+    return object_list(request, queryset=Resource.objects.all(), template_name='ManageResources/orderDetail.html', template_object_name='LocalGovernment')
 
 def index(request):
     queryset_rent=RentResource.objects.all()
     queryset_goods = GoodsResource.objects.all()
-    return render_to_response('ManageResources/index.html', {'rent':queryset_rent , 'goods':queryset_goods})
+    return render_to_response('ManageResources/index.html', {'rent':queryset_rent , 'goods':queryset_goods}, context_instance=RequestContext(request))
 
 def Goods_details(request, id):
     
@@ -58,17 +58,17 @@ def Rent_details(request, id):
 
 
 def Add_resources_goods_form(request):
-    return render_to_response('ManageResources/add_resources_goods.html')
+    return render_to_response('ManageResources/add_resources_goods.html', context_instance=RequestContext(request))
 
 def Add_resource_gymhall_form(request):
-    return render_to_response('ManageResources/add_resource_gymhall.html')
+    return render_to_response('ManageResources/add_resource_gymhall.html', context_instance=RequestContext(request))
 
 def View_available_goods(request):
-    return render_to_response('ManageResources/view_available_goods.html')
+    return render_to_response('ManageResources/view_available_goods.html', context_instance=RequestContext(request))
 
 def View_Profile(request):
-    return render_to_response('ManageResources/view_profile.html')
+    return render_to_response('ManageResources/view_profile.html', context_instance=RequestContext(request))
 
 def View_available_gymhall(request):
-    return render_to_response('ManageResources/view_available_gymhall.html')
+    return render_to_response('ManageResources/view_available_gymhall.html', context_instance=RequestContext(request))
 
