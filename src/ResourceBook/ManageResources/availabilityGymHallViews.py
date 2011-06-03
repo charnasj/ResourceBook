@@ -13,7 +13,9 @@ from ResourceBook.ManageResources.models import Resource
 
 def View_available_gymhall(request):
     queryset=RentResource.objects.all()
-    return render_to_response('ManageResources/view_available_gymhall.html' , {'gymhall':queryset}, context_instance=RequestContext(request))
+
+    return render_to_response('ManageResources/view_available_gymhall.html' , {'gymhall':queryset},context_instance=RequestContext(request))
+
 
     
 def View_available_gymhall_detail(request, id):
@@ -27,4 +29,8 @@ def View_available_gymhall_detail(request, id):
     )
 
 def index(request):
+<<<<<<< HEAD
     return render_to_response('ManageResources/index.html', context_instance=RequestContext(request))
+=======
+    return render_to_response('ManageResources/index.html',context_instance=RequestContext(request))
+>>>>>>> origin/master
