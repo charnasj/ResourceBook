@@ -68,14 +68,16 @@ def Place_gym_order(request, id):
     print(mahamat_time)
     print("AAAAAAAAAAAAAAAA")
     print(my_time)
+    order       = Order.objects.get(id=1)
+    
 #    name = models.CharField(max_length=70)
 #    description = models.CharField(max_length=70) 
 #    unit_price = models.DecimalField(decimal_places=2,max_digits=10)
 #    order_id = models.ForeignKey(Order)
 #    resource_id = models.ForeignKey(Resource)
 #    invoice_line_id = models.ForeignKey(InvoiceLine)
-    new_RentsOrderItem = RentsOrderItem(name="New Rents Order", description = "Some description", start = mahamat_time
-                                        ,unit_price=30, order_id_id=1, resource_id_id=1, invoice_line_id_id=1)
+    new_RentsOrderItem = RentsOrderItem(name="New Rents Order", description = "Some description", 
+                                        unit_price=30, order_id=order, resource_id_id=1, invoice_line_id_id=1)
     new_RentsOrderItem.save()
     return HttpResponse("keep it simple")
 
