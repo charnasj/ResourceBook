@@ -14,34 +14,22 @@ ADMINS = (
     ('Mazaji Jaleh', 'mazaji.jaleh@unine.ch')
 )
 
-MANAGERS = ADMINS
-<<<<<<< HEAD
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'c:/users/jaleh/ResourceBook/src/sqlite3.db',                      # Or path to database file if using sqlite3
+        'NAME': 'sqlite3.db',                      # Or path to database file if using sqlite3
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
       
         'PORT': '',  
-=======
 
-SESSION_ENGINE = 'django.contrib.sessions.backends.file'
 
-SESSION_FILE_PATH = 'tmp'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle                   # Or path to database file if using sqli
-        'NAME': 'sqlite3.db', # Or path to database file if using sql
-        'USER': '', # Not used with sqlite3.
-        'PASSWORD': '', # Not used with sqlite3.
-        'HOST': '', # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',
 
->>>>>>> origin/master
+
+
     }
 }
 
@@ -166,7 +154,6 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation
     'django.contrib.admindocs',
     'ManageResources',
-    'paypal.standard.ipn'
     
 )
 
