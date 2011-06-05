@@ -30,14 +30,14 @@ def Add_resources_goods_save(request):
         localGovernmentId = request.GET['local_government_id']
 
         if not LocalGovernment.objects.filter(pk = localGovernmentId).exists():
-            return HttpResponseNotFound('<h1><FONT COLOR="red" >Local Government ID doesn\'t exist</FONT></h1>', context_instance=RequestContext(request))
+            return HttpResponseNotFound('<h1><FONT COLOR="red" >Local Government ID doesn\'t exist</FONT></h1>')
         
         localGovernmentId = LocalGovernment.objects.get(pk = localGovernmentId)
     if 'vat_id' in request.GET and request.GET['vat_id']:
         vatId = request.GET['vat_id']
         
         if not VAT.objects.filter(pk = vatId).exists():
-            return HttpResponseNotFound('<h1><FONT COLOR="red" >VAT ID doesn\'t exist</FONT></h1>', context_instance=RequestContext(request))
+            return HttpResponseNotFound('<h1><FONT COLOR="red" >VAT ID doesn\'t exist</FONT></h1>')
         
         vatId = VAT.objects.get(pk=vatId)
     if 'quantity' in request.GET and request.GET['quantity']:
