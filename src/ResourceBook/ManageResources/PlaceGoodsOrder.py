@@ -28,7 +28,7 @@ def Place_order_goods_save(request):
         quantity= request.GET['quantity']
     
     #0. get the current customer
-    customer    = Customer.objects.get(id=request.session.get('customer_id'))
+    customer    = Customer.objects.get(id=request.session.get('customer_id')) 
     #1. get the target resource
     resource    = Resource.objects.get(id=resourceId)
     #2. create the invoice
@@ -57,9 +57,9 @@ def Place_order_goods_save(request):
     
     #now will return the paypayl url
     pp              = PayPal()
-    token           = pp.SetExpressCheckout(invoice.totalIncl)
+    token           = pp.SetExpressCheckout(pp,invoice.totalIncl,'ManageResources/paypal_order.html')
     paypal_url      = pp.PAYPAL_URL + token
     payload         = {'paypal_url':paypal_url}
     
-    return HttpResponse('paypal_order.html', payload, RequestContext(request))
+    return HttpResponse('ManageResources/paypal_order.html', payload, RequestContext(request))
     

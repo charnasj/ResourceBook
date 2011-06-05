@@ -27,7 +27,7 @@
 #Modified by Shabda
 
 
-import urllib, md5, datetime
+import urllib, hashlib, datetime
 from cgi import parse_qs
 
 class PayPal:
@@ -39,9 +39,9 @@ class PayPal:
     def __init__(self):
         ## Sandbox values
         self.signature_values = {
-        'USER' : '', # Edit this to your API user name
-        'PWD' : '', # Edit this to your API password
-        'SIGNATURE' : '', # edit this to your API signature
+        'USER' : 'stefan_1307127156_biz@net2000.ch', # Edit this to your API user name
+        'PWD' : '307127113', # Edit this to your API password
+        'SIGNATURE' : 'OWJrwCU0gYq3vtJT4-.ch1gsX7xAQVovlHFxUyDs2yQxd54HMmdySab', # edit this to your API signature
         'VERSION' : '53.0',
         }
         self.API_ENDPOINT = 'https://api-3t.sandbox.paypal.com/nvp' # Sandbox URL, not production
@@ -54,15 +54,17 @@ class PayPal:
             'METHOD' : "SetExpressCheckout",
             'NOSHIPPING' : 1,
             'PAYMENTACTION' : 'Authorization',
-            'RETURNURL' : return_url,
-            'CANCELURL' : cancel_url,
+            'RETURNURL' : "www.tsr.ch",
+            'CANCELURL' : "www.tsr.ch",
             'AMT' : amount,
         }
+        
         params.update(kwargs)
-        params_string = self.signature + urllib.urlencode(params)
-        response = urllib.urlopen(self.API_ENDPOINT, params_string).read()
-        response_dict = parse_qs(response)
-        response_token = response_dict['TOKEN'][0]
+        params_string   = self.signature + urllib.urlencode(params)
+        response        = urllib.urlopen(self.API_ENDPOINT, params_string).read()
+        response_dict   = parse_qs(response)
+        print response_dict
+        response_token  = response_dict['TOKEN'][0]
         return response_token
     
     def GetExpressCheckoutDetails(self, token, return_all = False):
