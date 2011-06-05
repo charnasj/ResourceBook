@@ -13,7 +13,8 @@ class ResourceBookUser (models.Model):
     phone = models.CharField(max_length=13)    
 
 class VAT (models.Model):
-    ratio = models.DecimalField(decimal_places=2,max_digits=10)
+#    ratio = models.DecimalField(decimal_places=2,max_digits=10)
+    ratio = models.IntegerField()
     name = models.CharField(max_length=70)
     description = models.CharField(max_length=70)
     activityStart = models.DateTimeField()
@@ -112,6 +113,6 @@ class GoodsOrderItem (OrderItem):
     quantity = models.PositiveIntegerField()
         
 class RentsOrderItem (OrderItem):
-    start = models.DateTimeField()
-    finish = models.DateTimeField()
+    start = models.CharField(max_length=20)
+    finish = models.CharField(max_length=20)
     
