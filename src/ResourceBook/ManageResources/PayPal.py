@@ -59,10 +59,10 @@ class PayPal:
             'AMT' : amount,
         }
         params.update(kwargs)
-        params_string = self.signature + urllib.urlencode(params)
-        response = urllib.urlopen(self.API_ENDPOINT, params_string).read()
-        response_dict = parse_qs(response)
-        response_token = response_dict['TOKEN'][0]
+        params_string   = self.signature + urllib.urlencode(params)
+        response        = urllib.urlopen(self.API_ENDPOINT, params_string).read()
+        response_dict   = parse_qs(response)
+        response_token  = response_dict['TOKEN'][0]
         return response_token
     
     def GetExpressCheckoutDetails(self, token, return_all = False):
