@@ -1,3 +1,10 @@
+<html>
+
+<head>
+<title></title>
+</head>
+<body>
+
 {% load i18n  %}
 {% load satchmo_currency %}
 {% load satchmo_checkout %}
@@ -15,3 +22,7 @@
 {% if paylink and not order.paid_in_full %}
 <p><a href="{% url satchmo_balance_remaining_order order.id %}">{% trans 'Pay remaining balance' %}</a></p>
 {% endif %}
+</body>
+
+
+</html>

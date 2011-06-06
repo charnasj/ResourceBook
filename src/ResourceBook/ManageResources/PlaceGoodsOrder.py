@@ -57,7 +57,7 @@ def Place_order_goods_save(request):
     
     #now will return the paypayl url
     pp              = PayPal()
-    token           = pp.SetExpressCheckout(pp,invoice.totalIncl,'ManageResources/paypal_order.html')
+    token           = pp.SetExpressCheckout(pp,invoice.totalIncl,'ManageResources/_order_payment_summery.html')
     paypal_url      = pp.PAYPAL_URL + token
     payload         = {'paypal_url':paypal_url}
     
