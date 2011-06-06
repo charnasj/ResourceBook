@@ -20,7 +20,8 @@ def Add_resource_gymhall_save(request):
     	Localgorvernment_ID= request.GET['Localgorvernment_ID']
         
         if not LocalGovernment.objects.filter(pk = Localgorvernment_ID).exists():
-            return HttpResponseNotFound('<h1><FONT COLOR="red" >Local Government ID doesn\'t exist</FONT></h1>')
+            request.session['local_government_id'] = Localgorvernment_ID
+            return render_to_response('ManageResources/Missing_ID.html',context_instance=RequestContext(request))
         
         Localgorvernment_ID= LocalGovernment.objects.get(pk=Localgorvernment_ID)        
     if 'name' in request.GET and request.GET['name']:
@@ -39,7 +40,8 @@ def Add_resource_gymhall_save(request):
         vatId = request.GET['vat_id']
         
         if not VAT.objects.filter(pk = vatId).exists():
-            return HttpResponseNotFound('<h1><FONT COLOR="red" >VAT ID doesn\'t exist</FONT></h1>')
+            request.session['vat_id'] = vatId
+            return render_to_response('ManageResources/Missing_ID.html',context_instance=RequestContext(request))
         
         vat = VAT.objects.get(pk=vatId)
     add_gymHall = RentResource(name=name, description=description,unit_price= unit_price, local_government_id = Localgorvernment_ID,vat_id = vat, address=address)
