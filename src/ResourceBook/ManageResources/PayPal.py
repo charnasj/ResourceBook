@@ -63,7 +63,6 @@ class PayPal:
         params_string   = self.signature + urllib.urlencode(params)
         response        = urllib.urlopen(self.API_ENDPOINT, params_string).read()
         response_dict   = parse_qs(response)
-        print response_dict
         response_token  = response_dict['TOKEN'][0]
         return response_token
     

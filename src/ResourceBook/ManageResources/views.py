@@ -53,32 +53,64 @@ def Rent_details(request, id):
         queryset=RentResource.objects.all(),
         object_id=id,
         template_name='ManageResources/detail_rent.html',
-        template_object_name='RentResource'
+        template_object_name='gymResource'
     )
 
 def Place_gym_order(request, id):
-    now = datetime.datetime.now()
-    print(now)
-    JSON_time = 'Wed Apr 21 19:29:07 +0000 2010'
-    my_time = datetime.datetime.strptime(JSON_time, '%a %b %d %H:%M:%S +0000 %Y')
-    m_t="03/06/11"
-#    'YYYY-MM-DD HH:MM[:ss[.uuuuuu]]'
-    mahamat_time = datetime.datetime.strptime(m_t, "%d/%m/%y")
-    print(now.strftime("%d/%m/%y"))
-    print(mahamat_time)
-    print("AAAAAAAAAAAAAAAA")
-    print(my_time)
-#    name = models.CharField(max_length=70)
-#    description = models.CharField(max_length=70) 
-#    unit_price = models.DecimalField(decimal_places=2,max_digits=10)
-#    order_id = models.ForeignKey(Order)
-#    resource_id = models.ForeignKey(Resource)
-#    invoice_line_id = models.ForeignKey(InvoiceLine)
-    new_RentsOrderItem = RentsOrderItem(name="New Rents Order", description = "Some description", start = mahamat_time
-                                        ,unit_price=30, order_id_id=1, resource_id_id=1, invoice_line_id_id=1)
+    
+    quantity = 0
+    #Creating the new Order according to the ressources
+    if 'id' in request.GET and request.GET['id']:
+        resourceId= request.GET['id']
+    if 'quantity' in request.GET and request.GET['quantity']:
+        quantity= request.GET['quantity']
+    
+    #0. get the current customer
+#    customer    = Customer.objects.get(id=request.session.get('customer_id'))
+    customer    = Customer.objects.get(id=1)
+    #1. get the target resource
+    resource    = Resource.objects.get(id=resourceId)
+    #2. create the invoice
+    invoice     = Invoice(invoiceDate = datetime.datetime.now())
+    invoice.save()
+    
+    #3. create the order
+    order       = Order(order_date = datetime.datetime.now(), status = 'new', customer_id = customer, invoice_id = invoice)
+    order.save();
+    
+    #4. create invoice lines
+    invoiceLine = InvoiceLine(name = resource.name, description = resource.description, dueDate = datetime.datetime.now(), units = quantity, amount = resource.unit_price, vat_id = resource.vat_id, )
+    invoiceLine.save()
+    
+    #5. create order item
+    if 'startDate' in request.GET and request.GET['startDate']:
+        startDate= request.GET['startDate']
+    #if the string input from the web page has to be converted into a date 
+    #here is how it is done, the date should look like this "03/06/11"
+#    start_date_as_date = datetime.datetime.strptime(startDate, "%d/%m/%y")
+        
+    if 'endDate' in request.GET and request.GET['endDate']:
+        endDate= request.GET['endDate']
+    #TODO add ,invoice_line_id = invoiceLine.id)
+    new_RentsOrderItem = RentsOrderItem(name=customer.user.username, description = "Some description", 
+                                        unit_price=resource.unit_price, order_id=order, resource_id=resource, start=startDate, finish=endDate)
     new_RentsOrderItem.save()
-    return HttpResponse("keep it simple")
-
+    #6. update invoice total
+    invoice.total       = invoiceLine.total
+    invoice.totalExcl   = invoiceLine.totalExcl
+    invoice.totalIncl   = invoiceLine.totalIncl
+    invoice.totalVat    = invoiceLine.totalIncl - invoiceLine.totalExcl
+    invoice.round       = 0
+    invoice.save()
+    
+    #now will return the paypayl url
+#    pp              = PayPal()
+#    token           = pp.SetExpressCheckout(invoice.totalIncl)
+#    paypal_url      = pp.PAYPAL_URL + token
+#    payload         = {'paypal_url':paypal_url}
+#    
+#    return HttpResponse('paypal_order.html', payload, RequestContext(request))
+    return HttpResponse("Rent order created.")
 
 def Add_resources_goods_form(request):
     return render_to_response('ManageResources/add_resources_goods.html', context_instance=RequestContext(request))
