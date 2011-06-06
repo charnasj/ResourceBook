@@ -70,7 +70,7 @@ class InvoiceLine (models.Model):
         vat             = VAT.objects.get( id=self.vat_id.id )
         self.total      = long(self.units) * long(self.amount)
         self.totalExcl  = self.total
-        vatTotal        = long(float(vat.ratio) * float(self.totalExcl))
+        vatTotal        = long(float(vat.ratio)/100 * float(self.totalExcl))
         self.totalIncl  = long(self.totalExcl) + long(vatTotal)
         super(InvoiceLine, self).save(*args, **kwargs) # Call the "real" save() method.
         

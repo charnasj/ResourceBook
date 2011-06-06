@@ -1,4 +1,25 @@
-{#Resource_detail.html#}
-<h1>{{Resource.name}}</h1>
-<p>price:${{product.price}}</p>
-{{form}}
+{% extends "base.html" %}
+{% block content %}
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" id="payPalForm">
+{% csrf_token %}
+
+<input type="hidden" name="item_number" value="01 - General Payment to FreelanceSwitch.com">
+<input type="hidden" name="cmd" value="_xclick">
+<input type="hidden" name="no_note" value="1">
+<input type="hidden" name="business" value="jaleh.mazaji@gmail.com">
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="return" value="http://freelanceswitch.com/payment-complete/">
+
+Item Details:<br /><input type="hidden" name="item_name" type="text" id="item_name"  size="45" value="{{ variable.description}}">
+{{ variable.description}}
+<br /><br />
+Amount: <br /><input  type="hidden" name="amount" type="text" id="amount" size="45" value="{{ variable.total}}">
+{{ variable.total}}
+<br /><br />
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+
+{% endblock %}
+

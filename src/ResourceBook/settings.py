@@ -19,8 +19,6 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-
-
 SESSION_ENGINE = 'django.contrib.sessions.backends.file'
 
 SESSION_FILE_PATH = 'tmp'
@@ -28,17 +26,14 @@ SESSION_FILE_PATH = 'tmp'
 
 DATABASES = {
     'default': {
-
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'sqlite3.db',                      # Or path to database file if using sqlite3
+        'NAME': 'sqlite3.db',                      # Or path to database file if using sqlite
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',  
-
     }
 }
-
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name

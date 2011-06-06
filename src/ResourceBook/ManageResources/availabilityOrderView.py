@@ -28,7 +28,7 @@ def View_available_orders(request):
         queryset=OrderItem.objects.all()
         return render_to_response('PlaceOrder/active_order.html' , {'orders':queryset}, context_instance=RequestContext(request))
 
-    
+
 def View_available_orders_detail(request, id):
     
     return object_detail(request,

@@ -1,6 +1,8 @@
-#Fri Jun 03 17:57:16 CEST 2011
+#Mon Jun 06 11:18:49 CEST 2011
 eclipse.preferences.version=1
 encoding//src/ResourceBook/ManageResources/forms.py=utf-8
 encoding//src/ResourceBook/paypal/standard/forms.py=utf-8
 encoding//src/ResourceBook/paypal/standard/ipn/views.py=utf-8
 encoding//src/ResourceBook/paypal/standard/widgets.py=utf-8
+encoding//src/ResourceBook/templates/ManageResources/detail_goods.html=UTF-8
+encoding//src/ResourceBook/templates/ManageResources/paypal_order.html=UTF-8

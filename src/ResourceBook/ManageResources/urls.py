@@ -67,5 +67,4 @@ urlpatterns = patterns('',
     
     url(r'^place_goods_order/$', PlaceGoodsOrder.Place_order_goods_form, name='Place_order_goods_form'),
     url(r'^save_goods_order/$', PlaceGoodsOrder.Place_order_goods_save, name='Place_order_goods_save')
-
 )

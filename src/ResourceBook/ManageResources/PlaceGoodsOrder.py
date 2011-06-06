@@ -54,12 +54,9 @@ def Place_order_goods_save(request):
     invoice.totalVat    = invoiceLine.totalIncl - invoiceLine.totalExcl
     invoice.round       = 0
     invoice.save()
+    print invoice.totalVat
+    variable            = {'total':(float(invoice.totalIncl) / 100),'name':resource.name,'description':resource.description}
+    return render_to_response('ManageResources/paypal_order.html',{'variable':variable}, RequestContext(request))
     
-    #now will return the paypayl url
-    pp              = PayPal()
-    token           = pp.SetExpressCheckout(pp,invoice.totalIncl,'ManageResources/paypal_order.html')
-    paypal_url      = pp.PAYPAL_URL + token
-    payload         = {'paypal_url':paypal_url}
-    
-    return HttpResponse('ManageResources/paypal_order.html', payload, RequestContext(request))
-    
+def PaymentComplete(request):
+    return render_to_response('ManageResources/payment_complete.html', RequestContext(request))
