@@ -9,10 +9,13 @@ from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render_to_response
 from ResourceBook.ManageResources.models import GoodsResource
 from ResourceBook.ManageResources.models import Resource
+from django.template import RequestContext
 
 def View_available_goods(request):
     queryset=GoodsResource.objects.all()
-    return render_to_response('ManageResources/view_available_goods.html' , {'goods':queryset})
+
+    return render_to_response('ManageResources/view_available_goods.html' , {'goods':queryset},context_instance=RequestContext(request))
 
 def index(request):
-    return render_to_response('ManageResources/index.html')
+    return render_to_response('ManageResources/index.html',context_instance=RequestContext(request))
+

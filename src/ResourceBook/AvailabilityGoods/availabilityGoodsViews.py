@@ -2,6 +2,7 @@ import ResourceBook.ManageResources.models
 from django.views.generic.list_detail import object_list
 from django.views.generic.list_detail import object_detail
 from django.shortcuts import render_to_response
+from ResourceBook.ManageResources.models import GoodsResource
 from ResourceBook.ManageResources.models import Resource
 
 #def LocalGovernment_list(request):
@@ -30,7 +31,8 @@ def View_available_goods(request):
     return object_list(request, 
         queryset=GoodsResource.objects.all(),
         template_name='ViewAvailableGoods/view_available_goods.html',
-        template_object_name='ResourceBook.ManageResources.models.GoodsResource'
+        template_object_name='ResourceBook.ManageResources.models.GoodsResource',
+        context_instance=RequestContext(request)
     )  
     
 def View_available_goods_detail(request, id):  
@@ -39,7 +41,8 @@ def View_available_goods_detail(request, id):
     return object_list(request, 
         queryset=GoodsResource.objects.all(),
         template_name='ViewAvailableGoods/view_available_goods.html',
-        template_object_name='ResourceBook.ManageResources.models.GoodsResource'
+        template_object_name='ResourceBook.ManageResources.models.GoodsResource',
+        context_instance=RequestContext(request)
     )  
     
 def View_available_goods_detail(request, id):
@@ -47,5 +50,6 @@ def View_available_goods_detail(request, id):
         queryset=GoodsResource.objects.all(),
         object_id=id,
         template_name='ViewAvailableGoods/detail.html',
-        template_object_name='ViewAvailableGoods'
+        template_object_name='ViewAvailableGoods',
+        context_instance=RequestContext(request)
     )

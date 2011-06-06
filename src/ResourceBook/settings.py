@@ -10,20 +10,42 @@ ADMINS = (
     ('Stephane Donnet', 'stephane.donnet@unine.ch'),
     ('Simon Brunner', 'simon.brunner@unine.ch'),
     ('Stephane Costa', 'stephane.costa@unine.ch'),
-    ('Abakoura Mahamat', 'abakoura.mahamat@unine.ch'),
-    ('Mazaji Jaleh', 'mazaji.jaleh@unine.ch')
+
+    ('Abakoura Mahamat','abakoura.mahamat@unine.ch'),
+    ('Mazaji Jaleh','mazaji.jaleh@unine.ch'),
+    ('Askri safwen','safwen.askri@unine.ch')
+
 )
+
+MANAGERS = ADMINS
+
+<<<<<<< HEAD
+=======
+MANAGERS = ADMINS
+>>>>>>> origin/master
+
+
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.file'
+
+SESSION_FILE_PATH = 'tmp'
 
 
 DATABASES = {
     'default': {
+
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+<<<<<<< HEAD
         'NAME': 'sqlite3.db',                      # Or path to database file if using sqlite3
+=======
+        'NAME': 'sqlite3.db',                      # Or path to database file if using sqlite
+
+>>>>>>> origin/master
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-      
         'PORT': '',  
+<<<<<<< HEAD
 
 
 
@@ -32,6 +54,14 @@ DATABASES = {
 
     }
 }
+=======
+          }}                  # Set to empty string for default. Not used with sqlite3.
+
+
+
+
+
+>>>>>>> origin/master
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -60,23 +90,31 @@ USE_L10N = True
 
 # Example: "/home/media/media.lawrence.com/media/"
 
-# Example: "/home/media/media.lawrence.com/media/
 MEDIA_ROOT = 'templates/media'
+
+
+# Example: "/home/media/media.lawrence.com/media/
+
+
 
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = 'http://localhost:8000/'
+MEDIA_URL = 'templates/media'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 
 # Example: "/home/media/media.lawrence.com/static/"
+
+STATIC_ROOT = 'ManageResources/static'
+
 # Example: "/home/media/media.lawrence.com/static/"
 
-STATIC_ROOT = 'templates/static'
+
+
 
 
 # URL prefix for static files.
@@ -86,7 +124,7 @@ STATIC_URL = 'http://localhost:8000/static/'
 # URL prefix for admin static files -- CSS, JavaScript and images.
 # Make sure to use a trailing slash.
 # Examples: "http://foo.com/static/admin/", "/static/admin/".
-ADMIN_MEDIA_PREFIX = '/static/admin/'
+ADMIN_MEDIA_PREFIX = 'ManageResources/static/admin/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -153,9 +191,18 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation
     'django.contrib.admindocs',
+<<<<<<< HEAD
     'ManageResources',
+=======
+    'ManageResources'
+    
+
+>>>>>>> origin/master
     
 )
+
+PAYPAL_RECEIVER_EMAIL = "jaleh.mazaji@gmail.com"
+SITE_DOMAIN = "http://localhost:8000"
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
@@ -176,6 +223,6 @@ LOGGING = {
             'handlers': ['mail_admins'],
             'level': 'ERROR',
             'propagate': True,
-        },
+        }
     }
 }

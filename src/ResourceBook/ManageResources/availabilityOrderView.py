@@ -14,6 +14,7 @@ from ResourceBook.ManageResources.models import Order
 from ResourceBook.ManageResources.models import Customer
 from ResourceBook.ManageResources.models import GoodsOrderItem
 from ResourceBook.ManageResources.models import RentsOrderItem
+from django.template import RequestContext
 
 
 def View_available_orders(request):
@@ -25,7 +26,7 @@ def View_available_orders(request):
 #        template_object_name='GoodsResource'
 #        )
         queryset=OrderItem.objects.all()
-        return render_to_response('PlaceOrder/active_order.html' , {'orders':queryset})
+        return render_to_response('PlaceOrder/active_order.html' , {'orders':queryset}, context_instance=RequestContext(request))
 
     
 def View_available_orders_detail(request, id):
@@ -34,5 +35,6 @@ def View_available_orders_detail(request, id):
         queryset=OrderItem.objects.all(),
         object_id=id,
         template_name='ViewAvailableGoods/detail.html',
-        template_object_name='ViewAvailableOrders'
+        template_object_name='ViewAvailableOrders',
+        context_instance=RequestContext(request)
     )

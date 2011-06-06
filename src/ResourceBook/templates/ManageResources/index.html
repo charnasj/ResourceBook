@@ -8,12 +8,6 @@
     <li><a href="{% url View_available_goods %}">View goods resource</a></li>
     <li><a href="{% url View_available_gymhall %}">View gymhall resource</a></li>
 	</ul>
-	<form action="/ManageResources/view_profile/" method="get">
-  	{% csrf_token %}
-  		<label for="id_profile">Id of the user</label>
-		<input type="text" name="id_profile" value="" id="id_profile">
-    	<input type="submit" value="View Profile">
-  	</form>
 	
 <h1>List of available goods</h1>
     {% if goods %}
