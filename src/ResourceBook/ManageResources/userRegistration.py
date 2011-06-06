@@ -34,7 +34,8 @@ def Reg_newuser_save(request):
     new_customer = Customer(address=address,phone=phone,user=auth_user, shipping_address = address)
     new_customer.save()
     
-    return HttpResponse("A new ResourceBookUser has been saved!")
+#    return HttpResponse("A new ResourceBookUser has been saved!")
+    return render_to_response('ManageResources/new_user_complete.html',context_instance=RequestContext(request))
 
 def Reg_newuser_form(request):
-    return render_to_response('ManageResources/new_user.html')
+    return render_to_response('ManageResources/new_user.html',context_instance=RequestContext(request))

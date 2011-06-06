@@ -17,7 +17,8 @@ ADMINS = (
 
 )
 
-MANAGERS = ADMINS
+MANAGERS = ADMIN
+
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.file'
 
