@@ -17,13 +17,7 @@ ADMINS = (
 
 )
 
-MANAGERS = ADMINS
-
-<<<<<<< HEAD
-=======
-MANAGERS = ADMINS
->>>>>>> origin/master
-
+MANAGERS = ADMIN
 
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.file'
@@ -35,33 +29,13 @@ DATABASES = {
     'default': {
 
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-<<<<<<< HEAD
         'NAME': 'sqlite3.db',                      # Or path to database file if using sqlite3
-=======
-        'NAME': 'sqlite3.db',                      # Or path to database file if using sqlite
-
->>>>>>> origin/master
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',  
-<<<<<<< HEAD
-
-
-
-
-
-
     }
 }
-=======
-          }}                  # Set to empty string for default. Not used with sqlite3.
-
-
-
-
-
->>>>>>> origin/master
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -191,14 +165,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation
     'django.contrib.admindocs',
-<<<<<<< HEAD
-    'ManageResources',
-=======
-    'ManageResources'
-    
-
->>>>>>> origin/master
-    
+    'ManageResources'    
 )
 
 PAYPAL_RECEIVER_EMAIL = "jaleh.mazaji@gmail.com"
